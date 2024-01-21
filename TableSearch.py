@@ -1,8 +1,17 @@
 import streamlit as st
 import pandas as pd
+from st_aggrid import GridOptionsBuilder, AgGrid, GridUpdateMode, DataReturnMode, ColumnsAutoSizeMode
+from utils import tablemaker
+
+####################session state variables
+# if 'num_export' not in st.session_state:
+#     st.session_state['num_export']=0
+
 
 st.markdown("# Simple Table Search ")
 st.sidebar.markdown("# Simple Table Search ")
+
+
 
 st.sidebar.write("## 🛠️ Control Panel 🛠️ ️\n")
 #############################table selection
@@ -16,12 +25,15 @@ option = st.sidebar.selectbox(
     tables['first column'],
     index=0)
 
-################################export format
+################################export
 "\n\n"
 chosen= st.sidebar.radio(
         'Export format 💾',
         ("RIS", "CSV"))
+st.sidebar.divider()
 
+
+st.sidebar.button('Download results', key='export', type='primary')
 #####################################main panel
 st.divider()
 '⬅️ You selected to search: ', option
@@ -41,36 +53,17 @@ if st.session_state.query:
             "numbers": [1,11,111,1111],
         })
 
-    if st.session_state.get('selectall'):
-        data_df["Select"] = [True for i in data_df.index]
+
 
     st.text("")
     str(str(data_df.shape[0])) + ' Results'  # idea: add autmatic search documentation with: time, db status, query
-    data_df["Select"]=[False for i in data_df.index]
-    cols=list(data_df.columns)
-    cols=[c for c in cols if c != "Select"]
-    st.button('Select all', key='selectall')
+
+    tablemaker()
+    #data_df["Select"] = [False for i in data_df.index]
 
 
-    st.data_editor(
-        data_df,
-        column_config={
-            "Select": st.column_config.CheckboxColumn(
-                "Select hits",
-                help="Select data to export",
-                default=False,
-            )
-        },
-        disabled=cols,
-        hide_index=True,
-    )
+    ########################### Function to reset checkbox states
 
-    if sum(data_df["Select"])>1:
-        st.sidebar.button("Download Results", type='primary')
-
-
-
-    #df
 
 
 
