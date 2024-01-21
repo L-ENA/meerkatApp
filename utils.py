@@ -3,9 +3,13 @@ import streamlit as st
 from st_aggrid import GridOptionsBuilder, AgGrid, GridUpdateMode, DataReturnMode, ColumnsAutoSizeMode
 
 
-def tablemaker(df):
-    if 'sid' not in st.session_state:
-        st.session_state.sid = None
+def tablemaker(df, this_key):
+    if 'sid{}'.format(this_key) not in st.session_state:
+        st.session_state['sid{}'.format(this_key)] = None
+
+
+
+
 
     df.insert(loc=0, column='Select', value=["" for i in list(df.index)])
 
@@ -13,7 +17,7 @@ def tablemaker(df):
 
     # Add pre_selected_rows param.
     gb.configure_selection(selection_mode="multiple", use_checkbox=True,
-                           pre_selected_rows=[st.session_state.sid])
+                           pre_selected_rows=[st.session_state['sid{}'.format(this_key)]])
     gb.configure_column("Select", headerCheckboxSelection = True)
     gb.configure_pagination(paginationAutoPageSize=False, paginationPageSize=15)
     gb.configure_side_bar()
@@ -28,9 +32,14 @@ def tablemaker(df):
                   #columns_auto_size_mode=ColumnsAutoSizeMode.FIT_CONTENTS,
                   fit_columns_on_grid_load=True,
                   reload_data=st.session_state.reload,
-                  key='mykey')
+                  key=this_key)
 
     selected_rows = data["selected_rows"]
+    st.session_state['export{}'.format(this_key)] = pd.DataFrame(selected_rows)
+    #print(selected_rows)
+    print(len(selected_rows))
+    print(st.session_state['export{}'.format(this_key)].shape)
+
 
 
 
@@ -42,3 +51,5 @@ def tablemaker(df):
 
     if len(selected_rows) != 0:
         selected_rows[0]
+
+
