@@ -2,11 +2,11 @@ import pandas as pd
 import streamlit as st
 from st_aggrid import GridOptionsBuilder, AgGrid, GridUpdateMode, DataReturnMode, ColumnsAutoSizeMode
 
-def tablemaker():
+
+def tablemaker(df):
     if 'sid' not in st.session_state:
         st.session_state.sid = None
 
-    df=pd.read_csv(r'C:\Users\c1049033\PycharmProjects\UNICEF_textmining\changestrategies\v3.csv').fillna("")
     df.insert(loc=0, column='Select', value=["" for i in list(df.index)])
 
     gb = GridOptionsBuilder.from_dataframe(df,min_column_width=100)
@@ -27,10 +27,12 @@ def tablemaker():
                   update_mode=GridUpdateMode.SELECTION_CHANGED,
                   #columns_auto_size_mode=ColumnsAutoSizeMode.FIT_CONTENTS,
                   fit_columns_on_grid_load=True,
-
+                  reload_data=st.session_state.reload,
                   key='mykey')
 
     selected_rows = data["selected_rows"]
+
+
 
 
     # Save the row index of the selected row.
