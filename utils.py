@@ -2,6 +2,9 @@ import pandas as pd
 import streamlit as st
 from st_aggrid import GridOptionsBuilder, AgGrid, GridUpdateMode, DataReturnMode, ColumnsAutoSizeMode
 
+def gbmaker(ddf):
+    gb = GridOptionsBuilder.from_dataframe(ddf, min_column_width=100)
+    return gb
 
 def tablemaker(df, this_key):
     if 'sid{}'.format(this_key) not in st.session_state:
@@ -13,7 +16,8 @@ def tablemaker(df, this_key):
 
     df.insert(loc=0, column='Select', value=["" for i in list(df.index)])
 
-    gb = GridOptionsBuilder.from_dataframe(df,min_column_width=100)
+
+    gb=gbmaker(df)
 
     # Add pre_selected_rows param.
     gb.configure_selection(selection_mode="multiple", use_checkbox=True,
@@ -35,10 +39,18 @@ def tablemaker(df, this_key):
                   key=this_key)
 
     selected_rows = data["selected_rows"]
-    st.session_state['export{}'.format(this_key)] = pd.DataFrame(selected_rows)
-    #print(selected_rows)
+    # st.session_state['export{}'.format(this_key)] = pd.DataFrame(selected_rows)
+    # #print(selected_rows)
     print(len(selected_rows))
-    print(st.session_state['export{}'.format(this_key)].shape)
+    #x=[print(r) for r in selected_rows]
+    myindices=[ i['_selectedRowNodeInfo']['nodeRowIndex'] for i in selected_rows]
+    st.session_state.exportindices=myindices
+    # print(myindices)
+        #
+        # {'_selectedRowNodeInfo': {'nodeRowIndex': 3, 'nodeId': '3'}, 'Select': '',
+        #  'InterventionDescription': 'Form - Risperidone (Oral)', 'InterventionID': 12851}
+
+    # print(st.session_state['export{}'.format(this_key)].shape)
 
 
 
@@ -53,3 +65,8 @@ def tablemaker(df, this_key):
         selected_rows[0]
 
 
+outcomefields=["OutcomeID",	"OutcomeDescription"]
+interventionfields=["InterventionID",	"InterventionDescription"]
+conditionfields=["HealthCareConditionID",	"HealthCareConditionDescription"]
+studyfields=["CENTRALStudyID","CRGStudyID","ShortName","StatusofStudy","TrialistContactDetails","CENTRALSubmissionStatus","Notes","DateEntered","DateToCENTRAL","DateEdited","Search_Tagged","UDef1","UDef2","UDef3","UDef4","UDef5","ISRCTN","UDef6","UDef7","UDef8","UDef9","UDef10"]
+reportfields=["Abstract","Authors","CENTRALReportID","CENTRALSubmissionStatus","CRGReportID","City","CopyStatus","DateEdited","Dateentered","DatetoCENTRAL","DupString","Edition","Editors","Issue","Journal","Language","Medium","Notes","OriginalTitle","Pages","PublicationTypeID","Publisher","ReportNumber","Title","TypeofReportID","UDef1","UDef10","UDef2","UDef3","UDef4","UDef5","UDef6","UDef7","UDef8","UDef9","Volume","Year"]

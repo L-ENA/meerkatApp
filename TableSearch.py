@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-from utils import tablemaker
+from utils import *
 import requests
 import json
 
@@ -16,6 +16,12 @@ if 'elasticindex' not in st.session_state:
     st.session_state.elasticindex = ""
 if 'nhits' not in st.session_state:
     st.session_state.nhits = 0
+if 'exportindices' not in st.session_state:
+    st.session_state.exportindices = []
+if 'query_df' not in st.session_state:
+    st.session_state.query_df = pd.DataFrame()
+if 'fieldinfo' not in st.session_state:
+    st.session_state.fieldinfo = ", ".join(reportfields)
 
 
 st.markdown("# Simple Table Search ")
@@ -36,14 +42,19 @@ option = st.sidebar.selectbox(
     index=0)
 if option=='Reports':
     st.session_state.elasticindex='tblreport'
+    st.session_state.fieldinfo =", ".join(reportfields)
 elif option=='Studies':
     st.session_state.elasticindex='tblstudy'
+    st.session_state.fieldinfo = ", ".join(studyfields)
 elif option=='Outcomes':
     st.session_state.elasticindex='tbloutcome'
+    st.session_state.fieldinfo = ", ".join(outcomefields)
 elif option=='Interventions':
     st.session_state.elasticindex='tblintervention'
+    st.session_state.fieldinfo = ", ".join(interventionfields)
 elif option=='Health Conditions':
     st.session_state.elasticindex='tblhealthcarecondition'
+    st.session_state.fieldinfo = ", ".join(conditionfields)
 
 if 'export{}'.format(option) not in st.session_state:
     st.session_state['export{}'.format(option)] = pd.DataFrame()
@@ -59,25 +70,8 @@ else:
 st.sidebar.divider()
 
 
-#st.sidebar.button('Download results', key='export', type='primary')
-
-def convert_df(dff):
-    print('SHAPE')
-    print(dff.shape)
-    dff=dff.to_csv(index=False).encode('utf-8')
-
-    return dff
 
 
-csv = convert_df(st.session_state['export{}'.format(option)])
-
-st.sidebar.download_button(
-   "Press to Download",
-   csv,
-   "{}_{}.csv".format(option,st.session_state.nhits),
-   "text/csv",
-   key='download-csv'
-)
 
 
 
@@ -85,28 +79,40 @@ st.sidebar.download_button(
 st.divider()
 '⬅️ You selected to search: ', option
 st.divider()
+html_string="<p>Typing a search term or phrase without field declaration results in all fields being searched.<br>For example Title:schizo* searches only the specified field; typing the term schizo* alone results in all fields being searched.<br>Here are the fields available for searching in your selected table:</p>"
+st.link_button("🛈 Query syntax help", "https://lucene.apache.org/core/2_9_4/queryparsersyntax.html")
+with st.expander("🛈 Searchable fields for '{}'".format(option)):
+    st.markdown(html_string, unsafe_allow_html=True)
+    st.write(st.session_state.fieldinfo)
+st.divider()
 
-st.text_input("Enter search query", key="query_{}".format(option), placeholder="Abstract:schizo* AND Authors:*dams")
 
 # You can access the value at any point with:
 
 
 ###################################show results and select hits
-
-if st.session_state["query_{}".format(option)]:
-    #st.session_state.reload=True
-    res = requests.post('http://localhost:9090/api/direct_retrieval',json={"input": st.session_state["query_{}".format(option)], "index": st.session_state.elasticindex})
+@st.cache_data
+def get_data(q):
+    res = requests.post('http://localhost:9090/api/direct_retrieval',
+                        json={"input": q,
+                              "index": st.session_state.elasticindex})
     print(res)
     json_data = json.loads(res.text)
+    return json_data
+
+if st.text_input("Enter search query", key="query_{}".format(option), placeholder="Abstract:schizo* AND Authors:*dams"):
+    #st.session_state.reload=True
+    json_data=get_data(st.session_state["query_{}".format(option)])
     # print(json_data.keys())
-    data_df = pd.DataFrame(json_data['response'])
+    st.session_state.query_df = pd.DataFrame(json_data['response'])
     # print(data_df.head())
 
 
 
     st.text("")
-    st.session_state.nhits =data_df.shape[0]
+    st.session_state.nhits =st.session_state.query_df.shape[0]
     str(str(st.session_state.nhits)) + ' Results'  # idea: add autmatic search documentation with: time, db status, query
+    #str(len(st.session_state.exportindices)) + ' Selected'  #
 
     if st.session_state["query_{}".format(option)]==st.session_state.previous_query:
         st.session_state.reload = False
@@ -115,12 +121,28 @@ if st.session_state["query_{}".format(option)]:
     print(st.session_state.reload)
     print(st.session_state["query_{}".format(option)])
     print(st.session_state.previous_query)
-    tablemaker(data_df, option)
+    tablemaker(st.session_state.query_df, option)
     st.session_state.previous_query=st.session_state["query_{}".format(option)]
     #data_df["Select"] = [False for i in data_df.index]
 
 
-    ########################### Function to reset checkbox states
+
+
+def convert_df(dff):
+    print('SHAPE')
+    print(dff.shape)
+    dff=dff.to_csv(index=False).encode('utf-8')
+    return dff
+
+if st.sidebar.button('Export', key='export', type='primary'):
+    thisdf = st.session_state.query_df[st.session_state.query_df.index.isin(st.session_state.exportindices)]  # get selected rows from the original input
+    csv = convert_df(thisdf)
+
+    st.sidebar.download_button("Press to Download",
+    csv,
+    "{}_{}.csv".format(option,len(st.session_state.exportindices)),
+    "text/csv",
+    key='download-csv')
 
 
 
