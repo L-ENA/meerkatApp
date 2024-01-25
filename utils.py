@@ -64,6 +64,41 @@ def tablemaker(df, this_key):
     if len(selected_rows) != 0:
         selected_rows[0]
 
+def adding(lines,key, value):
+    if len(value)>0:
+        lines.append("{}  - {}".format(key,value.strip()))
+    return lines
+
+def to_ris(df):
+    lines = []
+    for i,row in df.iterrows():
+        lines.append('TY  - JOUR')
+        lines=adding(lines,"T1", str(row["Title"]))
+        lines = adding(lines, "N2", str(row["Abstract"]))
+        for a in row["Authors"].split("//"):
+            lines = adding(lines, "A1", str(a))
+        lines = adding(lines, "IS", str(row["Issue"]))
+        lines = adding(lines, "VL", str(row["Volume"]))
+
+        lines = adding(lines, "JO", str(row["Journal"]))
+        lines = adding(lines, "SP", str(row["Pages"]))
+        lines = adding(lines, "PY", str(row["Year"]))
+
+        lines = adding(lines, "AD", str(row["UDef3"]))
+        lines = adding(lines, "SN", str(row["UDef4"]))
+        lines = adding(lines, "DO", str(row["UDef2"]))
+        lines = adding(lines, "ET", str(row["Edition"]))
+        lines = adding(lines, "ID", str(row["CRGReportID"]))
+        lines.append('ER  - ')
+        lines.append("")
+
+    lines='\n'.join(lines)
+    return lines
+
+
+
+
+
 
 outcomefields=["OutcomeID",	"OutcomeDescription"]
 interventionfields=["InterventionID",	"InterventionDescription"]

@@ -22,6 +22,8 @@ if 'query_df' not in st.session_state:
     st.session_state.query_df = pd.DataFrame()
 if 'fieldinfo' not in st.session_state:
     st.session_state.fieldinfo = ", ".join(reportfields)
+if 'chosen' not in st.session_state:
+    st.session_state.chosen = "CSV"
 
 
 st.markdown("# Simple Table Search ")
@@ -64,9 +66,14 @@ if st.session_state.elasticindex=='tblreport':
     chosen= st.sidebar.radio(
             'Export format 💾',
             ("RIS", "CSV"))
+    if chosen=='RIS':
+        st.session_state.chosen = "RIS"
+    else:
+        st.session_state.chosen = "CSV"
 else:
     st.sidebar.write('Export format 💾')
     st.sidebar.write('CSV')
+    st.session_state.chosen = "CSV"
 st.sidebar.divider()
 
 
@@ -114,16 +121,17 @@ if st.text_input("Enter search query", key="query_{}".format(option), placeholde
     str(str(st.session_state.nhits)) + ' Results'  # idea: add autmatic search documentation with: time, db status, query
     #str(len(st.session_state.exportindices)) + ' Selected'  #
 
-    if st.session_state["query_{}".format(option)]==st.session_state.previous_query:
-        st.session_state.reload = False
-    else:
-        st.session_state.reload = True
-    print(st.session_state.reload)
-    print(st.session_state["query_{}".format(option)])
-    print(st.session_state.previous_query)
-    tablemaker(st.session_state.query_df, option)
-    st.session_state.previous_query=st.session_state["query_{}".format(option)]
-    #data_df["Select"] = [False for i in data_df.index]
+    if st.session_state.nhits>0:
+        if st.session_state["query_{}".format(option)]==st.session_state.previous_query:
+            st.session_state.reload = False
+        else:
+            st.session_state.reload = True
+        print(st.session_state.reload)
+        print(st.session_state["query_{}".format(option)])
+        print(st.session_state.previous_query)
+        tablemaker(st.session_state.query_df, option)
+        st.session_state.previous_query=st.session_state["query_{}".format(option)]
+        #data_df["Select"] = [False for i in data_df.index]
 
 
 
@@ -135,14 +143,24 @@ def convert_df(dff):
     return dff
 
 if st.sidebar.button('Export', key='export', type='primary'):
+    import time
+
+    start = time.time()
+
     thisdf = st.session_state.query_df[st.session_state.query_df.index.isin(st.session_state.exportindices)]  # get selected rows from the original input
-    csv = convert_df(thisdf)
+
+    if st.session_state.chosen == "CSV":
+        output = convert_df(thisdf)
+    else:
+        output=to_ris(thisdf)
+
+    print(f'Time to convert: {time.time() - start}')
 
     st.sidebar.download_button("Press to Download",
-    csv,
-    "{}_{}.csv".format(option,len(st.session_state.exportindices)),
+    output,
+    "{}_{}.{}".format(option,len(st.session_state.exportindices),st.session_state.chosen.lower()),
     "text/csv",
-    key='download-csv')
+    key='download-results')
 
 
 
