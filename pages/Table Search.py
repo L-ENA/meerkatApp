@@ -8,22 +8,7 @@ import json
 # if 'num_export' not in st.session_state:
 #     st.session_state['num_export']=0
 
-if 'reload' not in st.session_state:
-    st.session_state.reload = False
-if 'previous_query' not in st.session_state:
-    st.session_state.previous_query = ""
-if 'elasticindex' not in st.session_state:
-    st.session_state.elasticindex = ""
-if 'nhits' not in st.session_state:
-    st.session_state.nhits = 0
-if 'exportindices' not in st.session_state:
-    st.session_state.exportindices = []
-if 'query_df' not in st.session_state:
-    st.session_state.query_df = pd.DataFrame()
-if 'fieldinfo' not in st.session_state:
-    st.session_state.fieldinfo = ", ".join(reportfields)
-if 'chosen' not in st.session_state:
-    st.session_state.chosen = "CSV"
+
 
 
 st.markdown("# Simple Table Search ")
