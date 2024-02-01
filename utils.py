@@ -89,6 +89,7 @@ def to_ris(df):
         lines = adding(lines, "DO", str(row["UDef2"]))
         lines = adding(lines, "ET", str(row["Edition"]))
         lines = adding(lines, "ID", str(row["CRGReportID"]))
+
         lines.append('ER  - ')
         lines.append("")
 

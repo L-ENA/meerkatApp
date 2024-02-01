@@ -4,6 +4,23 @@ from utils import *
 import requests
 import json
 
+if 'reload' not in st.session_state:
+    st.session_state.reload = False
+if 'previous_query' not in st.session_state:
+    st.session_state.previous_query = ""
+if 'elasticindex' not in st.session_state:
+    st.session_state.elasticindex = ""
+if 'nhits' not in st.session_state:
+    st.session_state.nhits = 0
+if 'exportindices' not in st.session_state:
+    st.session_state.exportindices = []
+if 'query_df' not in st.session_state:
+    st.session_state.query_df = pd.DataFrame()
+if 'fieldinfo' not in st.session_state:
+    st.session_state.fieldinfo = ", ".join(reportfields)
+if 'chosen' not in st.session_state:
+    st.session_state.chosen = "CSV"
+
 st.markdown("# Study Search ️")
 st.sidebar.markdown("# Study Search ️")
 
@@ -45,11 +62,13 @@ if 'export{}'.format(option) not in st.session_state:
 "\n\n"
 chosen= st.sidebar.radio(
             'Export format 💾',
-            ("RIS", "CSV"))
-if chosen=='RIS':
+            ( "Study CSV flat", "Report RIS flat","Structured Data"))
+if chosen=='Report RIS flat':
         st.session_state.chosen = "RIS"
-else:
+elif chosen=='Study CSV flat':
         st.session_state.chosen = "CSV"
+else:
+    st.session_state.chosen='combo'
 
 st.sidebar.divider()
 
@@ -75,6 +94,35 @@ st.divider()
 
 
 ###################################show results and select hits
+@st.cache_data
+def get_reports(some_df):
+    print("---------------------------------------getting reports")
+    targets=list(some_df["CRGStudyID"])
+    outdfs=[]
+    for t in targets:
+        print(t)
+        res=requests.post('http://localhost:9090/api/reportsfromstudyid', json={"input":t})
+        json_dat = json.loads(res.text)
+        new_df = pd.DataFrame(json_dat['response'])
+        new_df['CRGStudyID']=t
+        print(new_df.shape)
+        outdfs.append(new_df)
+    new_df=pd.concat(outdfs)
+    print(new_df.shape)
+    return new_df
+
+# @st.cache_data
+# def get_reports(some_df):
+#     targets=list(some_df["CRGStudyID"])
+#
+#     res=requests.post('http://localhost:9090/api/reportsfromstudyid', json={"input":targets})
+#     json_dat = json.loads(res.text)
+#     new_df = pd.DataFrame(json_dat['response'])
+#
+#
+#     return new_df
+
+
 @st.cache_data
 def get_data(q):
     res = requests.post('http://localhost:9090/api/direct_retrieval',
@@ -149,8 +197,9 @@ if st.sidebar.button('Export', key='export', type='primary'):
 
     if st.session_state.chosen == "CSV":
         output = convert_df(thisdf)
-    else:
-        output=to_ris(thisdf)
+    elif st.session_state.chosen == "RIS":
+        reportdf=get_reports(thisdf)
+        output=to_ris(reportdf)
 
     print(f'Time to convert: {time.time() - start}')
 
