@@ -3,6 +3,10 @@ import pandas as pd
 from utils import *
 import requests
 import json
+from datetime import datetime
+import os
+import zipfile
+import glob
 
 if 'reload' not in st.session_state:
     st.session_state.reload = False
@@ -96,19 +100,32 @@ st.divider()
 ###################################show results and select hits
 @st.cache_data
 def get_reports(some_df):
-    print("---------------------------------------getting reports")
+
     targets=list(some_df["CRGStudyID"])
+    ##print("---------------------------------------getting reports for {}".format(targets))
     outdfs=[]
+    #ts=[targets[i:i+15] for i in range(0, len(targets), 15)]
     for t in targets:
         print(t)
-        res=requests.post('http://localhost:9090/api/reportsfromstudyid', json={"input":t})
+        res=requests.post('http://localhost:9090/api/reportsfromstudyid', json={"input":[t]})
+        #print(res)
+        #print(res.text)
         json_dat = json.loads(res.text)
         new_df = pd.DataFrame(json_dat['response'])
-        new_df['CRGStudyID']=t
-        print(new_df.shape)
+
+        # print("xxxxx")
+        # print(list(new_df['CRGReportID']))
+        # print(new_df.shape)
+        # print(json_dat['reportids'])
+
+        #print(json_dat['studyids'])
+
+
+        #new_df['CRGStudyID'] = json_dat['studyids']
+        new_df['CRGStudyID'] = t
         outdfs.append(new_df)
     new_df=pd.concat(outdfs)
-    print(new_df.shape)
+    #print(new_df.shape)
     return new_df
 
 # @st.cache_data
@@ -188,6 +205,9 @@ def convert_df(dff):
     dff=dff.to_csv(index=False).encode('utf-8')
     return dff
 
+col1, col2 = st.sidebar.columns([1,1])
+
+
 if st.sidebar.button('Export', key='export', type='primary'):
     import time
 
@@ -197,16 +217,80 @@ if st.sidebar.button('Export', key='export', type='primary'):
 
     if st.session_state.chosen == "CSV":
         output = convert_df(thisdf)
+        print(f'Time to convert: {time.time() - start}')
+
+
     elif st.session_state.chosen == "RIS":
         reportdf=get_reports(thisdf)
         output=to_ris(reportdf)
+        print(f'Time to convert: {time.time() - start}')
 
-    print(f'Time to convert: {time.time() - start}')
 
-    st.sidebar.download_button("Press to Download",
-    output,
-    "{}_{}.{}".format(option,len(st.session_state.exportindices),st.session_state.chosen.lower()),
-    "text/csv",
-    key='download-results')
+    else:
+        output_csv = convert_df(thisdf)#csv study file
+        reportdf = get_reports(thisdf)
+        output_ris = to_ris(reportdf)
+        time_name=datetime.now().strftime('%Y_%m_%d_%H-%M-%S')
+        tmp_name=os.path.join(r"C:\Users\c1049033\PycharmProjects\meerkatApp\temp",time_name)
+        print("----------------------{}".format(tmp_name))
+        try:
+            os.mkdir(tmp_name)
+        except:
+            print(tmp_name, ' exists')
+        with open(os.path.join(tmp_name, "all.ris"), "w", encoding='utf-8') as f:
+            f.write(output_ris)
+        #output_csv.to_csv(os.path.join(tmp_name, "study_overview.csv"), index=False)
+        thisdf.to_csv(os.path.join(tmp_name, "study_overview.csv"), index=False)
+
+        ids=reportdf['CRGStudyID'].unique()
+        for i in ids:
+            tmpdf=reportdf[reportdf['CRGStudyID']==i]
+            tmp_ris = to_ris(tmpdf)
+            subfolder=os.path.join(tmp_name,str(i))
+            try:
+                os.mkdir(subfolder)
+            except:
+                print(subfolder, " already existed")
+            with open(os.path.join(subfolder, "study_{}_references.ris".format(i)), "w", encoding='utf-8') as f:
+                f.write(tmp_ris)
+
+        zipped="{}.zip".format(tmp_name)
+        # with zipfile.ZipFile(zipped, 'w') as f:
+        #     for file in glob.glob('{}/*'.format(tmp_name)):
+        #         f.write(file)
+
+        def zip(src, dst):
+            zf = zipfile.ZipFile(dst, "w", zipfile.ZIP_DEFLATED)
+            abs_src = os.path.abspath(src)
+            for dirname, subdirs, files in os.walk(src):
+                for filename in files:
+                    absname = os.path.abspath(os.path.join(dirname, filename))
+                    arcname = absname[len(abs_src) + 1:]
+                    print('zipping %s as %s' % (os.path.join(dirname, filename),
+                                          arcname))
+                    zf.write(absname, arcname)
+            zf.close()
+
+
+        zip(tmp_name, zipped)
+
+        with open(zipped, "rb") as fp:
+            btn = st.sidebar.download_button(
+                label="Download ZIP",
+                data=fp,
+                file_name="{}_{}.zip".format(option, len(st.session_state.exportindices)),
+                mime="application/zip"
+            )
+
+    if st.session_state.chosen != 'combo':
+        st.sidebar.download_button("Press to Download",
+                                   output,
+                                   "{}_{}.{}".format(option, len(st.session_state.exportindices),
+                                                     st.session_state.chosen.lower()),
+                                   "text/csv",
+                                   key='download-results')
+
+
+
 
 

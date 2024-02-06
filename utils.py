@@ -90,6 +90,15 @@ def to_ris(df):
         lines = adding(lines, "ET", str(row["Edition"]))
         lines = adding(lines, "ID", str(row["CRGReportID"]))
 
+        #####################add a notes field
+
+        study=row.get("CRGStudyID", False)
+        if study:
+            notes="This record belongs to study <{}>.".format(study)
+        else:
+            notes="This is a single record. Use the Study search tab on the MK-2 website to retrieve all assonciated reports. On study search, keep the automatically selected 'Reports' setting and use this query: CRGReportID:{}".format(str(row["CRGReportID"]))
+
+        lines.append("N1  - {}".format(notes))
         lines.append('ER  - ')
         lines.append("")
 

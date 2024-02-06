@@ -1,0 +1,300 @@
+Select,CENTRALStudyID,CENTRALSubmissionStatus,CRGStudyID,DateEdited,DateEntered,DateToCENTRAL,ISRCTN,Notes,Search_Tagged,ShortName,StatusofStudy,TrialistContactDetails,UDef1,UDef10,UDef2,UDef3,UDef4,UDef5,UDef6,UDef7,UDef8,UDef9
+,0,Accepted,967,09/06/2015 00:00:00,22/08/2000 00:00:00,28/08/2002 00:00:00,,,0,Alfredsson 1989,Closed,"Department of Psychiatry and Psychology, Karolinska Hospital, Stockholm, Sweden.",26,YES,Sweden,,,Sulpride Dosage,,,,9000100000023731
+,0,Accepted,1306,01/09/2000 00:00:00,01/09/2000 00:00:00,28/08/2002 00:00:00,,,0,Kogeorgos 1995,Closed,,28,YES,Greece,,,Sulpride vs. Risperidone,,,,9000100000013030
+,0,Accepted,431,03/10/2001 00:00:00,02/08/2000 00:00:00,28/08/2002 00:00:00,,,0,Cassano 1975,Closed,ORIGIN Other Europe,76,YES,Italy,,,Sulpride vs. Haloperidol,,,,9000100000007108
+,0,Accepted,434,18/06/2001 00:00:00,02/08/2000 00:00:00,28/08/2002 00:00:00,,,0,Catapano 1991,Closed,"U degli Studi, Istituto di Psichiatria, Naples, Italy ORIGIN Other Europe",Unclear,,Italy,,yes, CSG No: 1072 ,,,,9000100000023876
+,0,Accepted,579,15/10/2008 00:00:00,13/08/2000 00:00:00,28/08/2002 00:00:00,,,0,Carranza 1971,Closed,,20,YES,Mexico,,yes,Sulpride vs. Chlorpromazine,,,,9000100000023865
+,0,Accepted,1592,18/09/2000 00:00:00,18/09/2000 00:00:00,28/08/2002 00:00:00,,,0,Lepola 1989,Closed,"Harjamaki Mental Hospital, Kuopio, Finland. ORIGIN Other Europe",47,YES,Finland,,,Sulpride vs. Perphenazine,,,,9000100000020692
+,0,Accepted,1619,09/06/2015 00:00:00,18/09/2000 00:00:00,28/08/2002 00:00:00,,,0,Lewis 1983,Closed,ORIGIN UK,25,YES,UK,,,Sulpride Dosage,,,,9000100000023741
+,0,Accepted,1719,18/06/2001 00:00:00,19/09/2000 00:00:00,28/08/2002 00:00:00,,,0,Makanjuola 1988,Closed,"Department of Mental Health, University of Ife, Nigeria. ORIGIN Africa",15,YES,Nigeria,,,Chlorpromazine vs. Chlorpromazine Sulphoxide,,,,9000100000028986
+,0,Accepted,362,16/08/2001 00:00:00,02/08/2000 00:00:00,28/08/2002 00:00:00,,,0,Bratfos 1979,Closed,ORIGIN Other Europe,74,YES,Norway,,,Sulpride vs. Chlorpromazine,,,,9000100000023784
+,0,Accepted,1773,12/01/2017 00:00:00,20/09/2000 00:00:00,28/08/2002 00:00:00,,,0,Asada 1976,Closed,,82,,Japan,10 Weeks,yes, CSG No: 3168 ,,,,9000100000020720
+,0,Accepted,1806,02/03/2017 00:00:00,22/09/2000 00:00:00,28/08/2002 00:00:00,,,0,Hong 1995,Closed,,Unclear,YES,China,,yes,Sulpride + Clozapine vs. Sulpride,,,,9000100000038118
+,0,Accepted,1881,15/08/2001 00:00:00,29/09/2000 00:00:00,28/08/2002 00:00:00,,,0,Mahadevan 1991,Closed,,61,YES,UK,,,zuClopenthixol diHydrochloride vs. Sulpride,,,,9000100000023809
+,0,Accepted,689,25/09/2009 00:00:00,15/08/2000 00:00:00,28/08/2002 00:00:00,,,0,Edwards 1980,Closed,ORIGIN UK,38,YES,UK,,,Sulpride vs. Trifluoperazine,,,,9000100000023738
+,0,Accepted,1963,14/02/2017 00:00:00,02/10/2000 00:00:00,28/08/2002 00:00:00,,,0,Mezquita 1972,Closed,,89,,Spain,,yes, CSG No: 3167 ,,,,9000100000023779
+,0,Pending,2080,27/07/2010 00:00:00,06/10/2000 00:00:00,28/08/2002 00:00:00,,,0,Nishikawa 1989,Closed,"Department of Pharmacology, Kurume University School of Medicine, Japan. ORIGIN Mid E./Asia",82,YES,Japan,,,timiperione vs. Placebo,,,,9000100000023813
+,0,Accepted,220,11/06/2003 00:00:00,31/07/2000 00:00:00,28/08/2002 00:00:00,,,0,Amakusa 1973,Closed,,64,,China,,, CSG No: 2298 ,,,,9000100000020638
+,0,Accepted,3568,15/12/2000 00:00:00,15/12/2000 00:00:00,28/08/2002 00:00:00,,,0,Schwartz 1990,Closed,"Department of Neurology, Bnai-Zion Medical Center, Faculty of Medicine, Technion, Haifa, Israel.",15,YES,Israel,,,Sulpride vs. Placebo,,,,9000120000001501
+,0,Pending,3744,27/07/2010 00:00:00,19/01/2001 00:00:00,28/08/2002 00:00:00,,,0,Munk 1984,Closed,,28,YES,Denmark,,yes,Sulpride vs. Haloperidol,,,,9000100000016984
+,0,Accepted,2184,09/06/2015 00:00:00,09/10/2000 00:00:00,28/08/2002 00:00:00,,,0,Petit 1984,Closed,ORIGIN Other Europe,17,YES,France,,,Sulpride Dosage,,,,9000100000023753
+,0,Accepted,2197,18/12/2008 00:00:00,09/10/2000 00:00:00,28/08/2002 00:00:00,,,0,Pichot 1983,Closed,,64,YES,France,,yes,Chlorpromazine vs. Sulpiride,,,,9000100000038138
+,0,Accepted,2276,25/09/2001 00:00:00,13/10/2000 00:00:00,28/08/2002 00:00:00,,,0,Quinn 1984,Closed,,20,YES,UK,,yes,Sulpride vs. Placebo,,,,9000100000007536
+,0,Accepted,2289,10/12/2001 00:00:00,13/10/2000 00:00:00,28/08/2002 00:00:00,,,0,Rama Rao 1981,Closed,"MRC Neuropsychiatry Lab, West Park Hosp, Epsom, England ORIGIN UK",30,YES,UK,,,Sulpride vs. Haloperidol,,,,9000100000017006
+,0,Accepted,3116,17/11/2000 00:00:00,17/11/2000 00:00:00,28/08/2002 00:00:00,,,0,Yamagami 1993,Closed,"Department of Neuropsychiatry, Osaka Citi University Medical School, Japan.",45,YES,Unclear,,,Bromperidol vs. Sulpride,,,,9000100000010054
+,0,Accepted,3120,31/07/2015 00:00:00,17/11/2000 00:00:00,28/08/2002 00:00:00,,,0,Yang 1988,Closed,ORIGIN Mid E./Asia,140,YES,China,,yes,Chlorpromazine vs. Clozapine//Chlorpromazine vs. Sulpride//Clozapine vs. Sulpride,,,,9000100000014546
+,0,Accepted,3134,17/11/2000 00:00:00,17/11/2000 00:00:00,28/08/2002 00:00:00,,,0,Zann 1986,Closed,"Ctr Hospitalier Specialise du Rouvray, Service Hospitalo-Universitaire, Sotteville-les-Rouen, France",20,,France,,yes, CSG No: 3253 ,,,,9000100000024018
+,0,Pending,3246,27/07/2010 00:00:00,24/11/2000 00:00:00,28/08/2002 00:00:00,,,0,Yamagami 1988,Closed,"Department of Neuropsychiatry, Osaka City University Medical School, Japan.",52,YES,Unclear,,,Haloperidol vs. Prolactin,,,,9000100000023835
+,0,Accepted,2759,24/01/2017 00:00:00,30/10/2000 00:00:00,28/08/2002 00:00:00,,,0,Toru 1971,Closed,ORIGIN Mid E./Asia,76,YES YES,Japan,,,Chlorpromazine vs. Sulpiride,,,,9000100000029284 9000100000023825
+,0,Accepted,2497,23/10/2000 00:00:00,23/10/2000 00:00:00,28/08/2002 00:00:00,,,0,Shiloh 1997,Closed,"Geha Psychiatric Hospital, Rabin Medical Center, Petah Tiqva, Israel.",28,YES,Israel,,,Sulpride vs. Placebo,,,,9000100000005822
+,0,Accepted,2611,27/10/2000 00:00:00,27/10/2000 00:00:00,28/08/2002 00:00:00,,,0,Soni 1990b,Closed,"Hope & Prestwich Hosps, Salford Health Authority, England ORIGIN UK",24,YES,UK,,,Sulpride vs. Placebo,,,,9000100000018914
+,0,Accepted,3008,07/02/2007 00:00:00,10/11/2000 00:00:00,28/08/2002 00:00:00,,,0,Xia 1995,Closed,,52,YES,China,,yes,Flupentixol vs. Sulpride,,,,9000100000023990
+,0,Accepted,4457,31/07/2015 00:00:00,23/04/2001 00:00:00,28/08/2002 00:00:00,,,0,Liu 1996b,Closed,,92,YES,China,,yes,Clozapine vs. Sulpride//Clozapine vs. Clozapine + Sulpride//Clozapine + Sulpride vs. Sulpride,,,,9000100000038225
+,0,Accepted,4475,08/08/2001 00:00:00,23/04/2001 00:00:00,28/08/2002 00:00:00,,,0,Masciocchi 1974,Closed,,20,YES,Italy,,yes,Sulpride vs. Chlorimipramine,,,,9000100000005754
+,0,Accepted,4987,16/02/2017 00:00:00,01/05/2001 00:00:00,28/08/2002 00:00:00,,,0,Kim 1999a,Closed,,23,YES,Korea,,,Sulpride vs. Thioridazine,,,,9000100000036096
+,0,Accepted,5246,31/07/2015 00:00:00,15/05/2001 00:00:00,28/08/2002 00:00:00,,,0,Cosar 1999,Closed,,120,YES,Turkey,,,Chlorpromazine vs. Clozapine//Chlorpromazine vs. Haloperidol//Chlorpromazine vs. Sulpride//Clozapine vs. Haloperidol//Clozapine vs. Sulpride//Haloperidol vs. Sulpride,,,,9000100000012449
+,0,Accepted,5465,11/03/2003 00:00:00,06/06/2001 00:00:00,28/08/2002 00:00:00,,,0,Kudo 1986,Closed,,116,,Japan,,, CSG No: 5341,,,,9000100000029990
+,0,Accepted,5468,05/03/2003 00:00:00,06/06/2001 00:00:00,28/08/2002 00:00:00,,,0,Tanimukai 1973,Closed,,88,,Japan,,, CSG No: 5346 ,,,,9000100000024178
+,0,Accepted,5565,05/03/2003 00:00:00,22/08/2001 00:00:00,28/08/2002 00:00:00,,,0,Shimizu 1984,Closed,,96,,Japan,,,,,,,9000100000036124
+,0,Accepted,5896,06/03/2017 00:00:00,24/01/2002 00:00:00,28/08/2002 00:00:00,,,0,Ishimaru 1971,Closed,,82,,Japan,,,,,,,9000128000000608
+,0,Accepted,5912,15/10/2008 00:00:00,24/01/2002 00:00:00,28/08/2002 00:00:00,,,0,Alfredsson 1984,Closed,,50,YES,Sweden,,,Sulpride vs. Chlorpromazine,,,,9000100000008792
+,0,Accepted,6210,21/11/2008 00:00:00,05/08/2002 00:00:00,28/08/2002 00:00:00,,,0,Okuda 1979a,Closed,,74,,Japan,,,CSG 6117,,,,9000100000036144
+,0,Accepted,6211,20/12/2002 00:00:00,05/08/2002 00:00:00,28/08/2002 00:00:00,,,0,Nakazawa 1985,Closed,,126,,Japan,,,,,,,9000100000023691
+,0,Accepted,6274,15/10/2008 00:00:00,24/09/2002 00:00:00,,,,0,Svestka 1989c,Closed,"U Jan Evangelista Purkyne, Lekarska Fakulta, Psychiatricka Klinika, Brno, Czechoslovakia ORIGIN Other Europe",40,YES,Czech, CSG No: 1524 ,,Sulpride vs. Perphenazine,,,,9000100000038360
+,0,Accepted,6399,10/12/2002 00:00:00,26/11/2002 00:00:00,,,,0,Kudo 1989,Closed,,193,,Japan,,,,,,,9000100000036156
+,0,Accepted,6912,11/06/2003 00:00:00,11/06/2003 00:00:00,26/06/2003 00:00:00,,,0,Carranza 1974,Closed,,40,YES,Mexico,,,Sulpride vs. Thioridazine,,,,9000100000024038
+,0,Accepted,6914,11/06/2003 00:00:00,11/06/2003 00:00:00,26/06/2003 00:00:00,,,0,Kawamura 1972,Closed,,29,,Japan,,,,,,,9000100000036181
+,0,Accepted,6930,17/06/2003 00:00:00,17/06/2003 00:00:00,26/06/2003 00:00:00,,,0,Patel 1995,Closed,,40,YES,UK,,,Sulpride vs. Chlorpromazine,,,,9000100000036184
+,0,Accepted,6932,17/06/2003 00:00:00,17/06/2003 00:00:00,26/06/2003 00:00:00,,,0,Casey 1979,Closed,,11,YES,UK,,,Sulpride vs. Placebo,,,,9000100000019204
+,0,Accepted,7294,03/06/2004 00:00:00,03/06/2004 00:00:00,,,,0,Yi 2000,Closed,,60,YES,China,,,Venlafaxine vs. Sulpride,,,,9000100000006090
+,0,Accepted,7333,15/07/2004 00:00:00,15/07/2004 00:00:00,21/12/2004 00:00:00,,,0,Li 2002a,Closed,,87,YES,China,,,Risperidone vs. Sulpride,,,,9000100000036211
+,0,Accepted,7343,22/07/2004 00:00:00,15/07/2004 00:00:00,21/12/2004 00:00:00,,,0,Ren 2002a,Closed,,Unclear,YES,China,,,Risperidone vs. Sulpride,,,,9000100000030472
+,0,Accepted,7357,15/07/2004 00:00:00,15/07/2004 00:00:00,21/12/2004 00:00:00,,,0,Zhang 2002d,Closed,,Unclear,YES,China,,,Sulpride vs. Clozapine,,,,9000100000014685
+,0,Accepted,7502,30/11/2004 00:00:00,30/11/2004 00:00:00,21/12/2004 00:00:00,,,0,Weng 1999,Closed,,,YES,China,,,Risperidone vs. Sulpride,,,,9000100000036232
+,0,Pending,7503,27/07/2010 00:00:00,30/11/2004 00:00:00,21/12/2004 00:00:00,,,0,Chen 1999a,Closed,,,YES,China,,,Chlorpromazine vs. Sulpride,,,,9000100000038449
+,0,Accepted,7527,01/12/2004 00:00:00,01/12/2004 00:00:00,21/12/2004 00:00:00,,,0,Wang 1994a,Closed,,105,YES,China,,,Sulpride + Clozapine vs. Clozapine,,,,9000100000005839
+,0,Accepted,7531,25/06/2009 00:00:00,02/12/2004 00:00:00,21/12/2004 00:00:00,,,0,Liu 2003a,Closed,,80,YES,China,,,Risperidone vs. Sulpride,,,,9000100000036235
+,0,Accepted,7565,03/12/2004 00:00:00,03/12/2004 00:00:00,21/12/2004 00:00:00,,,0,Li 2003d,Closed,,84,YES,China,,,Venlafaxine + Clozapine vs. Sulpride + Clozapine,,,,9000100000038451
+,0,Accepted,7594,29/10/2015 00:00:00,07/12/2004 00:00:00,21/12/2004 00:00:00,,,0,Zhao 2003a,Closed,,60,YES,China,,,Chlorpromazine vs. Chlorpromazine + Sulpride,,,,9000100000023704
+,0,Accepted,7621,08/12/2004 00:00:00,08/12/2004 00:00:00,21/12/2004 00:00:00,,,0,Chen 2003f,Closed,,Unclear,YES,China,,,Risperidone vs. Sulpride,,,,9000100000036246
+,0,Accepted,7688,13/12/2004 00:00:00,13/12/2004 00:00:00,21/12/2004 00:00:00,,,0,Xu 2001c,Closed,,150,YES,China,,,Sultopride injection vs. Sulpride injection,,,,9000100000030568
+,0,Accepted,7721,16/12/2004 00:00:00,14/12/2004 00:00:00,21/12/2004 00:00:00,,,0,Lu 2003a,Closed,,70,YES,China,,,Quetiapine vs. Sulpride,,,,9000100000036253
+,0,Accepted,7823,17/12/2004 00:00:00,17/12/2004 00:00:00,21/12/2004 00:00:00,,,0,Zhu 1999,Closed,,88,YES,China,,,Clozapine + Chlorimipramine vs. Clozapine,,,,9000100000024086
+,0,Accepted,7831,31/07/2015 00:00:00,17/12/2004 00:00:00,21/12/2004 00:00:00,,,0,Yao 1999,Closed,,41,YES,China,,,Clozapine vs. Clozapine + Sulpride,,,,9000100000014566
+,0,Accepted,7853,25/08/2016 00:00:00,21/12/2004 00:00:00,28/01/2005 00:00:00,,,0,Yang 2000,Closed,,64,YES,China,,,TCM - Acupoint - Sulpiride (Injection) vs. Treatment as Usual,,,,9000100000004570
+,0,Accepted,7862,21/12/2004 00:00:00,21/12/2004 00:00:00,28/01/2005 00:00:00,,,0,Li 2001d,Closed,,60,YES,China,,,Risperidone vs. Sulpride,,,,9000100000013210
+,0,Accepted,7882,04/01/2005 00:00:00,04/01/2005 00:00:00,05/12/2006 00:00:00,,,0,Du 2001,Closed,,60,YES,China,,,Sulpride + occupational & recreational Therapy vs. Sulpride,,,,9000100000030615
+,0,Accepted,8094,22/02/2008 00:00:00,15/09/2005 00:00:00,20/12/2005 00:00:00,,,0,Li 2001,Closed,,320,YES,China,,,Chlorpromazine vs. Sulpride,,,,9000100000036285
+,0,Accepted,8105,23/11/2006 00:00:00,15/09/2005 00:00:00,20/12/2005 00:00:00,,,0,Wang 2000j,Closed,,540,YES,China,,,Clozapine vs. Sulpride,,,,9000100000014353
+,0,Pending,8251,27/07/2010 00:00:00,16/09/2005 00:00:00,20/12/2005 00:00:00,,,0,Xiao 2004,Closed,,96,YES,China,,,Sulpride vs. Risperidone,,,,9000100000036301
+,0,Pending,8275,27/07/2010 00:00:00,16/09/2005 00:00:00,20/12/2005 00:00:00,,,0,Yueying 2004,Closed,,90,YES,China,,,Chlorpromazine vs. Sulpride,,,,9000100000014707
+,0,Pending,8286,27/07/2010 00:00:00,16/09/2005 00:00:00,20/12/2005 00:00:00,,,0,Zhu 2004b,Closed,,64,YES,China,,,Risperidone vs. Sulpride,,,,9000100000030741
+,0,Pending,8326,19/09/2005 00:00:00,19/09/2005 00:00:00,20/12/2005 00:00:00,,,0,Shu 1998,Closed,,120,YES,China,,,Sultopride vs. Sulpride,,,,9000100000030761
+,0,Pending,8353,19/09/2005 00:00:00,19/09/2005 00:00:00,20/12/2005 00:00:00,,,0,Chang 2003b,Closed,,40,YES,China,,,Quetiapine vs. Sulpride,,,,9000100000030786
+,0,Pending,8365,30/03/2016 00:00:00,19/09/2005 00:00:00,20/12/2005 00:00:00,,,0,Kong 2001a,Closed,,60,YES,China,,,Clozapine + Risperidone vs. Risperidone + Sulpride,,,,9000100000030797
+,0,Pending,8374,19/09/2005 00:00:00,19/09/2005 00:00:00,20/12/2005 00:00:00,,,0,Zhang 2000d,Closed,,70,YES,China,,,Risperidone vs. Sulpride,,,,9000100000030805
+,0,Pending,8376,19/09/2005 00:00:00,19/09/2005 00:00:00,20/12/2005 00:00:00,,,0,Wang 2003o,Closed,,100,YES,China,,,Risperidone + Sulpride vs. Clozapine + Sulpride,,,,9000100000030807
+,0,Pending,8392,19/09/2005 00:00:00,19/09/2005 00:00:00,20/12/2005 00:00:00,,,0,Zhang 2004t,Closed,,48,YES,China,,,Quetiapine vs. Sulpride,,,,9000100000030822
+,0,Pending,8395,19/09/2005 00:00:00,19/09/2005 00:00:00,20/12/2005 00:00:00,,,0,Li 1994b,Closed,,32,YES,China,,,Flupentixol vs. Sulpride,,,,9000100000030825
+,0,Pending,8396,19/09/2005 00:00:00,19/09/2005 00:00:00,20/12/2005 00:00:00,,,0,Liu 1995c,Closed,,81,YES,China,,,Clozapine vs. Sulpride,,,,9000100000030826
+,0,Pending,8410,20/09/2005 00:00:00,20/09/2005 00:00:00,20/12/2005 00:00:00,,,0,Li 2001g,Closed,,40,YES,China,,,Sultopride vs. Sulpride,,,,9000100000030838
+,0,Pending,8412,20/09/2005 00:00:00,20/09/2005 00:00:00,20/12/2005 00:00:00,,,0,Yang 2001a,Closed,,40,YES,China,,,Olanzapine vs. Sulpride,,,,9000100000030840
+,0,Pending,8426,20/09/2005 00:00:00,20/09/2005 00:00:00,20/12/2005 00:00:00,,,0,Wang 1995d,Closed,,48,YES,China,,,Clozapine + Sulpride vs. Sulpride,,,,9000100000030852
+,0,Accepted,8432,17/11/2008 00:00:00,20/09/2005 00:00:00,20/12/2005 00:00:00,,,0,Ju 1997,Closed,,41,YES,China,,,Thioridazine vs. Sulpride,,,,9000100000024248
+,0,Pending,8440,20/09/2005 00:00:00,20/09/2005 00:00:00,20/12/2005 00:00:00,,,0,Weng 1998a,Closed,,195,YES,China,,,Risperidone vs. Sulpride,,,,9000100000030863
+,0,Pending,8442,20/09/2005 00:00:00,20/09/2005 00:00:00,20/12/2005 00:00:00,,,0,Zhang 1999f,Closed,,60,YES,China,,,Sulpride + Clozapine vs. Clozapine,,,,9000100000030865
+,0,Pending,8444,20/09/2005 00:00:00,20/09/2005 00:00:00,20/12/2005 00:00:00,,,0,Wang 1999b,Closed,,80,YES,China,,,Risperidone vs. Sulpride,,,,9000100000030866
+,0,Pending,8457,20/09/2005 00:00:00,20/09/2005 00:00:00,20/12/2005 00:00:00,,,0,Zhang 1999h,Closed,,61,YES,China,,,Risperidone vs. Sulpride,,,,9000100000030877
+,0,Pending,8459,20/09/2005 00:00:00,20/09/2005 00:00:00,20/12/2005 00:00:00,,,0,Jiang 1999,Closed,,80,YES,China,,,Sulpride vs. Clozapine,,,,9000100000030879
+,0,Pending,8462,20/09/2005 00:00:00,20/09/2005 00:00:00,20/12/2005 00:00:00,,,0,Si 1999,Closed,,150,YES,China,,,Sulpride + Clozapine vs. Sulpride,,,,9000100000030882
+,0,Pending,8463,20/09/2005 00:00:00,20/09/2005 00:00:00,20/12/2005 00:00:00,,,0,Wang 1999c,Closed,,80,YES,China,,,Risperidone vs. Sulpride,,,,9000100000030883
+,0,Pending,8473,20/09/2005 00:00:00,20/09/2005 00:00:00,20/12/2005 00:00:00,,,0,Sun 2001b,Closed,,41,YES,China,,,Risperidone vs. Sulpride,,,,9000100000030892
+,0,Pending,8500,20/09/2005 00:00:00,20/09/2005 00:00:00,20/12/2005 00:00:00,,,0,Cai 2002,Closed,,80,YES,China,,,Doxepin + Sulpride vs. Sulpride,,,,9000100000005745
+,0,Pending,8503,20/09/2005 00:00:00,20/09/2005 00:00:00,20/12/2005 00:00:00,,,0,Jie 2002,Closed,,64,YES,China,,,L-Stepholidine vs. Sulpride,,,,9000100000030919
+,0,Pending,8510,20/09/2005 00:00:00,20/09/2005 00:00:00,20/12/2005 00:00:00,,,0,Wu 2002e,Closed,,90,YES,China,,,Risperidone vs. Sulpride,,,,9000100000030924
+,0,Pending,8515,31/07/2015 00:00:00,20/09/2005 00:00:00,20/12/2005 00:00:00,,,0,Zhou 2003i,Closed,,221,YES,China,,,Chlorpromazine vs. Clozapine//Chlorpromazine vs. Risperidone//Chlorpromazine vs. Sulpride//Clozapine vs. Risperidone//Clozapine vs. Sulpride//Risperidone vs. Sulpride,,,,9000100000030928
+,0,Pending,8519,31/05/2016 00:00:00,20/09/2005 00:00:00,20/12/2005 00:00:00,,,0,Zou 2003,Closed,,98,YES,China,,,Clozapine + Sulpride vs. Sulpride,,,,9000100000030932
+,0,Pending,8548,21/09/2005 00:00:00,21/09/2005 00:00:00,20/12/2005 00:00:00,,,0,An 2004,Closed,,60,YES,China,,,Psychosocial Intervention + Antipsychotic medication vs. Antipsychotic medication,,,,9000100000030957
+,0,Pending,8748,27/07/2010 00:00:00,13/02/2006 00:00:00,05/12/2006 00:00:00,,,0,Kotler 2004,Closed,,17,YES,Israel,,,Sulpride + Olanzapine vs. Olanzapine,,,,9000100000005789
+,0,Accepted,9158,04/09/2006 00:00:00,04/09/2006 00:00:00,05/12/2006 00:00:00,,,0,Sun 2005b,Closed,,62,YES,China,,,Risperidone vs. Sulpride,,,,9000100000031177
+,0,Accepted,9170,05/08/2016 00:00:00,04/09/2006 00:00:00,05/12/2006 00:00:00,,,0,Zhao 2005,Closed,,100,YES,China,,,Aripiprazole vs. Sulpiride,,,,9000100000036384
+,0,Accepted,9177,07/09/2006 00:00:00,07/09/2006 00:00:00,05/12/2006 00:00:00,,,0,Chen 2005e,Closed,,40,YES,China,,,Risperidone vs. Sulpride,,,,9000100000036386
+,0,Accepted,9196,11/09/2006 00:00:00,11/09/2006 00:00:00,05/12/2006 00:00:00,,,0,Wu 2005a,Closed,,97,YES,China,,,Olanzapine + Sulpride vs. Olanzapine,,,,9000100000023700
+,0,Accepted,9540,15/06/2007 00:00:00,25/10/2006 00:00:00,05/12/2006 00:00:00,,,0,Wu 2006a,Closed,,112,YES,China,,,Clozapine vs. sulpride,,,,9000100000014453
+,0,Accepted,9793,16/05/2012 00:00:00,16/01/2007 00:00:00,10/11/2008 00:00:00,,,0,Wuliji 2003,Open/Ongoing,,200,YES,China,,,TCM - Shuangzao (Mixture) vs. Placebo (Both Sulpride),,,,9000100000024074
+,0,Pending,9801,05/08/2016 00:00:00,19/01/2007 00:00:00,,,,0,Zhang 2005l,Closed,,80,YES,China,,,Aripiprazole vs. Sulpiride,,,,9000100000008224
+,0,Pending,9826,29/10/2015 00:00:00,19/01/2007 00:00:00,,,,0,Wang 2005aq,Closed,,198,YES YES,China,,,Chlorpromazine vs. Clozapine + Sulpiride,,,,9000100000031441
+,0,Pending,9827,19/01/2007 00:00:00,19/01/2007 00:00:00,,,,0,Wang 2005af,Closed,,50,YES,China,,,Risperidone vs. Sulpride,,,,9000100000031442
+,0,Pending,9849,22/01/2007 00:00:00,22/01/2007 00:00:00,,,,0,Zhang 2005w,Closed,,134,YES,China,,,Loxapine vs. Sulpride,,,,9000100000038624
+,0,Accepted,10010,08/06/2007 00:00:00,08/06/2007 00:00:00,10/11/2008 00:00:00,,,0,Cheng 2006a,Closed,,60,YES,China,,,Sulpride vs. Risperidone,,,,9000100000031533
+,0,Accepted,10042,11/06/2007 00:00:00,11/06/2007 00:00:00,10/11/2008 00:00:00,,,0,Kong 2006,Closed,,120,YES,China,,,TCM - Kaiqiao Ling (Decoction)(Add-On) vs. Sulpiride,,,,9000100000031551
+,0,Pending,10155,11/11/2009 00:00:00,16/06/2007 00:00:00,10/11/2008 00:00:00,,,0,Gong 2001,Closed,,90,YES,China,,,Clozapine vs. Clozapine + Sulpride,,,,9000100000023696
+,0,Pending,10173,11/11/2009 00:00:00,18/06/2007 00:00:00,10/11/2008 00:00:00,,,0,Yang 2004d,Closed,,66,YES,China,,,Quetiapine(produced in China) vs. Sulpride,,,,9000100000036476
+,0,Pending,10214,11/11/2009 00:00:00,19/06/2007 00:00:00,10/11/2008 00:00:00,,,0,Zhu 2004c,Closed,,64,YES,China,,,Risperidone vs. Sulpride,,,,9000100000024235
+,0,Accepted,10278,24/01/2017 00:00:00,21/07/2007 00:00:00,10/11/2008 00:00:00,,"
+User defined 3
+
+Notes2
+typical Antipsychotics vs. Atypical Antipsychotics typical Antipsychotics vs. Atypical Antipsychotics",0,CUtLASS-1,Closed,,277,YES YES YES YES YES YES YES YES YES,UK,52 Weeks,,Clozapine vs. conventional treatment Atypical Antipsychotics vs. typical Antipsychotics Clozapine vs. second generation Antipsychotics Atypical Antipsychotics vs. typical Antipsychotics first generation Antipsychotics vs. second generation Antipsychotics,,,,9000100000031661 9000100000012500 9000100000005063 9000100000034145 9000100000029970 9000100000031239 9000100000031300 9000100000030351
+,0,Pending,10548,09/11/2009 00:00:00,27/08/2007 00:00:00,10/11/2008 00:00:00,,,0,Zhao 2002a,Closed,,100,YES,China,,,Risperidone vs. Clozapine + Sulpride,,,,9000100000031861
+,0,Pending,10554,31/01/2017 00:00:00,28/08/2007 00:00:00,10/11/2008 00:00:00,,"
+Notes2
+
+User defined field 10
+",0,A 2006,Closed,,50,YES YES,China and USA,,,Aripiprazole vs. Sulpiride Aripiprazole vs. Sulpiride,,,,9000100000031865 9000100000031866 9000100000032962
+,0,Pending,10605,05/08/2016 00:00:00,29/08/2007 00:00:00,10/11/2008 00:00:00,,,0,Huang 2006,Closed,,63,YES,China,,,Aripiprazole vs. Sulpiride,,,,9000100000031906
+,0,Pending,10613,09/11/2009 00:00:00,29/08/2007 00:00:00,10/11/2008 00:00:00,,,0,Li 2006j,Closed,,60,YES,China,,,Electric stimulation + Sulpride vs. Sulpride,,,,9000100000031913
+,0,Pending,10625,09/11/2009 00:00:00,29/08/2007 00:00:00,10/11/2008 00:00:00,,,0,Li 2006q,Closed,,83,YES,China,,,Sulpride + Haloperidol vs. Sulpride,,,,9000100000031923
+,0,Accepted,10631,29/08/2007 00:00:00,29/08/2007 00:00:00,10/11/2008 00:00:00,,,0,Lin 2005f,Closed,,60,YES,China,,,Quetiapine vs. Sulpride,,,,9000100000036532
+,0,Pending,10644,04/02/2013 00:00:00,30/08/2007 00:00:00,10/11/2008 00:00:00,,"
+User defined field 10
+",0,Qian 2005,Closed,,60,YES,China,8 Weeks,,Quetiapine vs. Sulpride Quetiapine vs. sulpride,,,,9000100000031935
+,0,Pending,10679,09/11/2009 00:00:00,31/08/2007 00:00:00,10/11/2008 00:00:00,,,0,Wang 2005ac,Closed,,80,YES,China,,,Sulpride + Sertraline vs. Sulpride,,,,9000100000031962
+,0,Accepted,10690,31/07/2015 00:00:00,31/08/2007 00:00:00,10/11/2008 00:00:00,,,0,Xu 2006d,Closed,,64,YES,China,,,Clozapine vs. Clozapine + Sulpride,,,,9000100000005862
+,0,Pending,10730,05/08/2016 00:00:00,01/09/2007 00:00:00,10/11/2008 00:00:00,,,0,Zhou 2006,Closed,,40,YES,China,,,Aripiprazole vs. Sulpiride,,,,9000100000032002
+,0,Pending,10738,10/11/2009 00:00:00,03/09/2007 00:00:00,10/11/2008 00:00:00,,,0,Cao 2005c,Closed,,62,YES,China,,,Risperidone vs. Sulpride,,,,9000100000032008
+,0,Pending,11270,09/11/2009 00:00:00,22/02/2008 00:00:00,10/11/2008 00:00:00,,,0,Chen 2003d,Closed,,90,YES,China,,,Risperidone vs. Sulpride,,,,9000100000032337
+,0,Accepted,11393,24/05/2008 00:00:00,24/05/2008 00:00:00,10/11/2008 00:00:00,,,0,Ao 2007,Closed,,195,YES,China,,,TCM - Shuangzao (Mixture) vs. Sulpiride,,,,9000100000032411
+,0,Accepted,11404,26/05/2008 00:00:00,26/05/2008 00:00:00,10/11/2008 00:00:00,,,0,Chen 2007c,Closed,,61,YES,China,,,Aripiprazole + Sulpride vs. Sulpride,,,,9000100000032417
+,0,Accepted,11441,27/05/2008 00:00:00,27/05/2008 00:00:00,10/11/2008 00:00:00,,,0,Guo 2006d,Closed,,86,YES,China,,,Sulpride + Sertraline vs. Risperidone,,,,9000100000024309
+,0,Accepted,11450,05/08/2016 00:00:00,27/05/2008 00:00:00,10/11/2008 00:00:00,,,0,He 2007,Closed,,100,YES,China,,,Aripiprazole vs. Sulpiride,,,,9000100000036672
+,0,Accepted,11560,04/06/2008 00:00:00,04/06/2008 00:00:00,10/11/2008 00:00:00,,,0,Qiu 2007a,Closed,,191,YES,China,,,Quetiapine vs. Sulpride,,,,9000100000036696
+,0,Accepted,11570,04/06/2008 00:00:00,04/06/2008 00:00:00,10/11/2008 00:00:00,,,0,Su 2006,Closed,,80,YES,China,,,Risperidone vs. Sulpride,,,,9000100000032498
+,0,Pending,11584,15/07/2016 00:00:00,06/06/2008 00:00:00,10/11/2008 00:00:00,,,0,Tao 2007b,Closed,,100,YES,China,,,Clozapine + Probanthine vs. Probanthine + Sulpride,,,,9000100000036702
+,0,Accepted,11585,15/07/2016 00:00:00,06/06/2008 00:00:00,10/11/2008 00:00:00,,,0,Tao 2007a,Closed,,66,YES,China,,,Sertraline + Sulpride vs. Sulpride,,,,9000100000036703
+,0,Accepted,11589,06/06/2008 00:00:00,06/06/2008 00:00:00,10/11/2008 00:00:00,,,0,Tong 2006,Closed,,86,YES,China,,,Fluoxetine + Sulpride vs. Sulpride,,,,9000100000036705
+,0,Accepted,11592,06/08/2015 00:00:00,07/06/2008 00:00:00,10/11/2008 00:00:00,,,0,Wan 2007a,Closed,,60,YES,China,,,Aripiprazole vs. Sertraline + Sulpiride,,,,9000100000036707
+,0,Pending,11621,05/08/2016 00:00:00,07/06/2008 00:00:00,10/11/2008 00:00:00,,,0,Wei 2006,Closed,,100,YES,China,,,Aripiprazole vs. Sulpiride,,,,9000100000036711
+,0,Pending,11700,10/11/2009 00:00:00,11/06/2008 00:00:00,10/11/2008 00:00:00,,,0,Zhao 2007b,Closed,,70,YES,China,,,Quetiapine + Sulpride vs. Quetiapine,,,,9000100000032575
+,0,Pending,11715,10/11/2009 00:00:00,11/06/2008 00:00:00,10/11/2008 00:00:00,,,0,Zhou 2006d,Closed,,71,YES,China,,,Quetiapine + Sulpride vs. Quetiapine,,,,9000100000032585
+,0,Pending,12290,13/11/2008 00:00:00,13/11/2008 00:00:00,,,,0,Souto 1971,,,,,Canada,,,,,,,9000100000032830
+,0,Pending,12420,21/11/2008 00:00:00,21/11/2008 00:00:00,,,,0,Hofmann 1979,,,,,Austria,,,,,,,9000100000032865
+,0,Pending,12423,21/11/2008 00:00:00,21/11/2008 00:00:00,,,,0,Crosse 1974,,,,,Spain,,,,,,,9000100000005513
+,0,Pending,12447,21/11/2008 00:00:00,21/11/2008 00:00:00,,,,0,Okuda 1979b,,,,,Unclear,,,,,,,9000100000032874
+,0,Pending,12914,18/12/2008 00:00:00,18/12/2008 00:00:00,,,,0,Bellomo 1972,,,,,Brazil,,,,,,,9000100000038779
+,0,Accepted,13180,16/05/2012 00:00:00,14/02/2009 00:00:00,07/04/2009 00:00:00,,,0,Ma 2009,Closed,,200,,China,,,TCM - Gastrodiae Elata (Herbal; Plant) vs.  Placebo (Both Sulpride),,,,9000100000024041
+,0,Accepted,13381,28/01/2017 00:00:00,28/03/2009 00:00:00,16/02/2010 00:00:00,,,0,Patel 1996,Closed,,60,YES,UK,,,Sulpride vs. Chlorpromazine,,,,9000100000033173
+,0,Pending,14053,10/11/2009 00:00:00,21/09/2009 00:00:00,,,,0,Xu 2008b,Closed,,46,YES,China,,,Sertraline + Sulpride vs. Risperidone,,,,9000100000006744
+,0,Pending,14062,05/08/2016 00:00:00,28/09/2009 00:00:00,,,,0,Yang 2008,Closed,,80,YES,China,,,Aripiprazole vs. Sulpiride,,,,9000100000033420
+,0,Pending,14141,10/11/2009 00:00:00,05/10/2009 00:00:00,,,,0,Wei 2008b,Closed,,60,YES,China,,,Sulpride + Nimodipine vs. Sulpride,,,,9000100000033452
+,0,Pending,14145,05/08/2016 00:00:00,05/10/2009 00:00:00,10/11/2009 00:00:00,,,0,Wang 2008ai,Closed,,60,YES,China,,,Aripiprazole vs. Sulpiride,,,,9000100000037093
+,0,Pending,14200,10/11/2009 00:00:00,14/10/2009 00:00:00,,,,0,Dong 2007,Closed,,191,YES,China,,,Ziprasidone vs. Sulpride,,,,9000100000033484
+,0,Pending,14205,10/11/2009 00:00:00,14/10/2009 00:00:00,,,,0,Fu 2008,Closed,,80,YES,China,,,Ziprasidone vs. Sulpride,,,,9000100000033487
+,0,Pending,14224,07/11/2016 00:00:00,14/10/2009 00:00:00,10/11/2009 00:00:00,,"
+Notes2
+TCM - Qingxin Chongji I (Granule) + Clozapine or Sulpiride vs. TCM - Qingxin Chongji I (Granule) + Risperidone or Olanzapine//TCM - Qingxin Chongji I (Granule) + Clozapine or Sulpiride vs. Clozapine or Sulpiride//TCM - Qingxin Chongji I (Granule) + Clozapine or Sulpiride vs. Risperidone or Olanzapine//TCM - Qingxin Chongji I (Granule) + Risperidone or Olanzapine vs. Clozapine or Sulpiride//TCM - Qingxin Chongji I (Granule) + Risperidone or Olanzapine vs. Risperidone or Olanzapine//Clozapine or Sulpiride vs. Risperidone or Olanzapine
+User defined field 10
+",0,Han 2007a,Closed,,406,YES YES,China,8 Weeks,,TCM - Qingxin Chongji I (Granule) + Olanzapine + Risperidone vs. TCM - Qingxin Chongji II (Granule) + Chlorpromazine + Clozapine,,,,9000100000033501 9000100000033502 9000100000024341 9000100000032944 9000100000032931
+,0,Pending,14294,11/11/2009 00:00:00,16/10/2009 00:00:00,10/11/2009 00:00:00,,,0,Zhong 2008,Closed,,74,YES,China,,,Quetiapine vs. Sulpride,,,,9000100000033541
+,0,Pending,14300,05/08/2016 00:00:00,16/10/2009 00:00:00,,,,0,Zhou 2008,Closed,,68,YES,China,,,Aripiprazole vs. Sulpiride,,,,9000129000000676
+,0,Pending,14336,06/08/2015 00:00:00,17/10/2009 00:00:00,,,,0,Wang 2008u,Closed,,86,YES,China,,,Aripiprazole vs. Sulpiride,,,,9000100000033560
+,0,Pending,14361,12/11/2009 00:00:00,17/10/2009 00:00:00,10/11/2009 00:00:00,,,0,Li 2008b,Closed,,200,YES,China,,,Risperidone vs. Sulpride,,,,9000100000024128
+,0,Pending,14368,10/11/2009 00:00:00,17/10/2009 00:00:00,,,,0,Li 2008j,Closed,,90,YES,China,,,Quetiapine fumarate vs. Sulpride,,,,9000100000033583
+,0,Pending,14380,10/11/2009 00:00:00,17/10/2009 00:00:00,,,,0,Li 2008y,Closed,,80,YES,China,,,Sertraline + Sulpride vs. Sulpride,,,,9000100000037145
+,0,Pending,14438,06/08/2015 00:00:00,18/10/2009 00:00:00,10/11/2009 00:00:00,,,0,Wang 2008d,Closed,,80,YES,China,,,Aripiprazole vs. Sulpiride,,,,9000100000037162
+,0,Pending,14460,12/11/2009 00:00:00,18/10/2009 00:00:00,10/11/2009 00:00:00,,,0,Tang 2008b,Closed,,200,YES,China,,,Risperidone vs. Sulpride,,,,9000100000033628
+,0,Pending,14676,27/03/2012 00:00:00,10/11/2009 00:00:00,,,,0,Sun 2005f,Closed,,44,,China,6 Weeks,,,,,,9000100000033717
+,0,Pending,14696,10/11/2009 00:00:00,10/11/2009 00:00:00,,,,0,Li 2005t,Closed,,,YES,China,,,Quetiapine + Sulpride vs. Quetiapine,,,,9000100000033731
+,0,Pending,14709,14/05/2012 00:00:00,10/11/2009 00:00:00,,,,0,Wang 2005ar,Closed,,50,,China,12 Weeks,,Risperidone vs. sulpride,,,,9000100000033736
+,0,Pending,14780,10/11/2009 00:00:00,10/11/2009 00:00:00,,,,0,Zhang 2002n,Closed,,,,China,,,,,,,9000100000037220
+,0,Pending,15141,23/01/2010 00:00:00,23/01/2010 00:00:00,,,,0,Xun 2009,Closed,,,YES,China,,,Quetiapine + Sulpride vs. Sulpride,,,,9000100000033911
+,0,Pending,15173,05/08/2016 00:00:00,23/01/2010 00:00:00,,,"
+Country of origin
+",0,Zhu 2009,Closed,,,YES YES,China,,,Aripiprazole vs. Sulpiride,,,,9000100000033920
+,0,Pending,15209,25/01/2010 00:00:00,25/01/2010 00:00:00,,,,0,Cheng 2009a,Closed,,,YES,China,,,Ziprasidone vs. Sulpride,,,,9000100000033933
+,0,Pending,15276,22/01/2016 00:00:00,25/01/2010 00:00:00,,,,0,Gao 2009b,Closed,,,YES YES,China,,,Sulpride + Venlafaxine vs. Risperidone Venlafaxine + Sulpride vs. Risperidone,,,,9000100000033953 9000100000034844
+,0,Pending,15290,28/01/2013 00:00:00,25/01/2010 00:00:00,,,"
+Country of origin
+",0,Li 2009j,Closed,,,YES YES,China,,,Fluoxertine Hydrochloride + Sulpride vs. Sulpride Fluoxetine + Sulpride,,,,9000100000037287
+,0,Pending,16786,09/06/2015 00:00:00,28/10/2010 00:00:00,,,,0,Kong 2001,Closed,,52,,China,8 Weeks,,Sulpride Dosage,,,,9000100000011198
+,0,Pending,17318,05/10/2016 00:00:00,20/01/2011 00:00:00,,,,0,Liu 2010h,Closed,,70,YES,China,,,Quetiapine vs. Sulpride,,,,9000100000037523
+,0,Pending,17339,20/01/2011 00:00:00,20/01/2011 00:00:00,,,,0,Shi 2010b,Closed,,,YES,China,,,TCM - Jiawei Wendan (Decoction) + Sulpiride vs. Haloperidol,,,,9000100000034554
+,0,Pending,17353,05/08/2016 00:00:00,20/01/2011 00:00:00,,,,0,Zhou 2010d,Closed,,90,YES,China,,,Olanzapine + Sulpride vs. Olanzapine,,,,9000100000034565
+,0,Pending,17355,20/01/2011 00:00:00,20/01/2011 00:00:00,,,,0,Zhou 2009d,Closed,,,YES,China,,,Ziprasidone vs. Sulpride,,,,9000100000034566
+,0,Pending,17365,20/01/2011 00:00:00,20/01/2011 00:00:00,,,,0,Tang 2009,Closed,,,YES,China,,,Quetiapine vs. Sulpride,,,,9000100000034573
+,0,Pending,17402,05/08/2016 00:00:00,20/01/2011 00:00:00,,,,0,Qi 2009,Closed,,,YES,China,,,Aripiprazole vs. Sulpiride,,,,9000100000034596
+,0,Pending,17403,05/08/2016 00:00:00,20/01/2011 00:00:00,,,,0,Long 2009,Closed,,,YES,China,,,Aripiprazole vs. Sulpiride,,,,9000100000037537
+,0,Pending,17438,20/01/2011 00:00:00,20/01/2011 00:00:00,,,,0,Zhang 2009v,Closed,,,YES,China,,,Risperidone + Sertraline vs. Risperidone,,,,9000100000034616
+,0,Pending,17499,20/01/2011 00:00:00,20/01/2011 00:00:00,,,,0,Zhu 2009a,Closed,,,YES,China,,,Sertraline + Sulpride vs. Risperidone,,,,9000100000037564
+,0,Pending,17513,20/01/2011 00:00:00,20/01/2011 00:00:00,,,,0,Li 2010k,Closed,,,YES,China,,,Ziprasidone vs. Sulpride,,,,9000100000034655
+,0,Pending,17519,20/01/2011 00:00:00,20/01/2011 00:00:00,,,,0,Li 2009k,Closed,,,YES,China,,,Venlafaxine + Sulpride vs. Risperidone,,,,9000100000034658
+,0,Pending,17523,20/01/2011 00:00:00,20/01/2011 00:00:00,,,,0,Li 2010r,Closed,,,YES,China,,,Ziprasidone vs. Sulpride,,,,9000100000034662
+,0,Pending,17551,05/08/2016 00:00:00,20/01/2011 00:00:00,,,,0,Du 2010b,Closed,,,YES,China,,,Aripiprazole vs. Sulpiride,,,,9000100000037575
+,0,Pending,17559,20/01/2011 00:00:00,20/01/2011 00:00:00,,,,0,Yang 2009e,Closed,,,YES,China,,,Ziprasidone vs. Sulpride,,,,9000100000034688
+,0,Pending,17584,20/01/2011 00:00:00,20/01/2011 00:00:00,,,,0,Duan 2010e,Closed,,,YES,China,,,Ziprasidone vs. Sulpride,,,,9000100000037580
+,0,Pending,17610,20/01/2011 00:00:00,20/01/2011 00:00:00,,,,0,Xiong 2010a,Closed,,,YES,China,,,Quetiapine vs. Sulpride,,,,9000100000034715
+,0,Pending,17611,20/01/2011 00:00:00,20/01/2011 00:00:00,,,,0,Xiong 2009,Closed,,,YES,China,,,Psychological Intervention + pharmacotherapy vs. Sulpride,,,,9000100000034716
+,0,Pending,17616,05/08/2016 00:00:00,20/01/2011 00:00:00,,,,0,Wang 2009f,Closed,,,YES,China,,,Aripiprazole vs. Sulpiride,,,,9000100000037586
+,0,Pending,17632,20/01/2011 00:00:00,20/01/2011 00:00:00,,,,0,Wang 2010y,Closed,,,YES,China,,,Ziprasidone vs. Sulpride,,,,9000100000034732
+,0,Pending,17639,20/01/2011 00:00:00,20/01/2011 00:00:00,,,,0,Wang 2010ad,Closed,,,YES,China,,,Ziprasidone vs. Sulpride,,,,9000100000034736
+,0,Pending,17660,20/01/2011 00:00:00,20/01/2011 00:00:00,,,,0,Cheng 2010b,Closed,,,YES,China,,,Ziprasidone vs. Sulpride,,,,9000100000034747
+,0,Pending,17665,20/01/2011 00:00:00,20/01/2011 00:00:00,,,,0,Zu 2009,Closed,,,YES,China,,,Quetiapine vs. Sulpride,,,,9000100000034750
+,0,Pending,17667,20/01/2011 00:00:00,20/01/2011 00:00:00,,,,0,Cheng 2009b,Closed,,,YES,China,,,Ziprasidone vs. Sulpride,,,,9000100000037600
+,0,Pending,17672,05/08/2016 00:00:00,20/01/2011 00:00:00,,,,0,Tong 2010,Closed,,700,YES,China,,,Aripiprazole vs. Chlorpromazine//Aripiprazole vs. Clozapine//Aripiprazole vs. Olanzapine//Aripiprazole vs. Quetiapine//Aripiprazole vs. Risperidone//Aripiprazole vs. Sulpiride//Chlorpromazine vs. Clozapine//Chlorpromazine vs. Olanzapine//Chlorpromazine vs. Quetiapine//Chlorpromazine vs. Risperidone//Chlorpromazine vs. Sulpiride//Clozapine vs. Olanzapine//Clozapine vs. Quetiapine//Clozapine vs. Risperidone//Clozapine vs. Sulpiride//Olanzapine vs. Quetiapine//Olanzapine vs. Risperidone//Olanzapine vs. Sulpiride//Quetiapine vs. Risperidone//Quetiapine vs. Sulpiride//Risperidone vs. Sulpiride,,,,9000100000037602
+,0,Pending,17675,20/01/2011 00:00:00,20/01/2011 00:00:00,,,,0,Mi 2009b,Closed,,,YES,China,,,Quetiapine vs. Sulpride,,,,9000100000034756
+,0,Pending,17721,20/01/2011 00:00:00,20/01/2011 00:00:00,,,,0,Xue 2010,Closed,,,YES,China,,,Quetiapine + Sulpride vs. Sulpride,,,,9000100000034781
+,0,Pending,17728,20/01/2011 00:00:00,20/01/2011 00:00:00,,,,0,Zhan 2009b,Closed,,,YES,China,,,Ziprasidone vs. Sulpride,,,,9000100000034786
+,0,Pending,17739,20/01/2011 00:00:00,20/01/2011 00:00:00,,,,0,Xie 2010f,Closed,,,YES,China,,,Ziprasidone vs. Sulpride,,,,9000100000037619
+,0,Pending,17758,20/01/2011 00:00:00,20/01/2011 00:00:00,,,,0,Lu 2009b,Closed,,,YES,China,,,Venlafaxine + Sulpride vs. Risperidone,,,,9000100000034806
+,0,Pending,17791,20/01/2011 00:00:00,20/01/2011 00:00:00,,,,0,Chen 2009d,Closed,,,YES,China,,,TCM - Shenqi Wuweizi (Tablet)(Add-On) vs. Sulpride,,,,9000100000037634
+,0,Pending,17815,20/01/2011 00:00:00,20/01/2011 00:00:00,,,,0,Han 2009a,Closed,,,YES,China,,,Sulpride vs. Alprazolam+ Buspirone,,,,9000100000037639
+,0,Pending,17825,05/10/2016 00:00:00,20/01/2011 00:00:00,,,,0,Ma 2010c,Closed,,90,YES,China,,,Quetiapine vs. Sulpride,,,,9000100000034837
+,0,Pending,19249,21/05/2012 00:00:00,01/05/2012 00:00:00,,,,0,Liu 2010t,Closed,,60,,China,7 Weeks,,,,,,9000100000035384
+,0,Pending,19251,23/03/2016 00:00:00,01/05/2012 00:00:00,,,,0,Zhang 2010i,Closed,,60,,China,12 Weeks,,,,,,9000100000035385
+,0,Pending,19362,31/05/2016 00:00:00,01/05/2012 00:00:00,,,,0,Zhou 2010a,Closed,,78,,China,12 Weeks,,,,,,9000100000037923
+,0,Pending,19380,15/01/2016 00:00:00,01/05/2012 00:00:00,,,,0,Du 2011,Closed,,60,,China,12 Weeks,,TCM - Acupuncture (Add-On) vs. Sulpiride,,,,9000100000035484
+,0,Pending,19408,05/08/2016 00:00:00,01/05/2012 00:00:00,,,,0,Zhou 2010b,Closed,,80,,China,8 Weeks,,,,,,9000100000037942
+,0,Pending,19413,05/08/2016 00:00:00,01/05/2012 00:00:00,,,,0,Chen 2010e,Closed,,60,,China,8 Weeks,,,,,,9000100000037945
+,0,Pending,19458,14/05/2012 00:00:00,01/05/2012 00:00:00,,,,0,Huang 2010o,Closed,,76,,China,8 Weeks,,Ziprasidone vs. sulpride,,,,9000100000037970
+,0,Pending,20308,05/08/2016 00:00:00,30/09/2014 00:00:00,,,,0,Zu 2013,Closed,,64,,China,Not Extracted,,,,,,
+,0,Pending,20310,05/08/2016 00:00:00,30/09/2014 00:00:00,,,,0,Wang 2013q,Closed,,164,,China,9 Weeks,,,,,,
+,0,Pending,20324,30/09/2014 00:00:00,30/09/2014 00:00:00,,,,0,Yu 2013c,Closed,,80,,China,Not Extracted,,,,,,
+,0,Pending,20359,05/08/2016 00:00:00,30/09/2014 00:00:00,,,,0,Sun 2013b,Closed,,69,,China,Not Extracted,,,,,,
+,0,Pending,20406,30/09/2014 00:00:00,30/09/2014 00:00:00,,,,0,Wang 2013t,Closed,,60,,China,Not Extracted,,,,,,
+,0,Pending,20422,30/09/2014 00:00:00,30/09/2014 00:00:00,,,,0,Zhou 2012j,Closed,,63,,China,Not Extracted,,,,,,
+,0,Pending,20453,05/08/2016 00:00:00,30/09/2014 00:00:00,,,,0,Yang 2012e,Closed,,96,,China,Not Extracted,,,,,,
+,0,Pending,20502,23/03/2016 00:00:00,30/09/2014 00:00:00,,,,0,Yang 2012c,Closed,,45,,China,Not Extracted,,,,,,
+,0,Pending,20503,23/03/2016 00:00:00,30/09/2014 00:00:00,,,,0,Yang 2012d,Closed,,45,,China,Not Extracted,,,,,,
+,0,Pending,20504,30/09/2014 00:00:00,30/09/2014 00:00:00,,,,0,Liu 2012i,Closed,,136,,China,Not Extracted,,,,,,
+,0,Pending,20557,30/09/2014 00:00:00,30/09/2014 00:00:00,,,,0,Wang 2012af,Closed,,56,,China,Not Extracted,,,,,,
+,0,Pending,20654,30/09/2014 00:00:00,30/09/2014 00:00:00,,,,0,Li 2012ax,Closed,,78,,China,Not Extracted,,,,,,
+,0,Pending,20755,30/09/2014 00:00:00,30/09/2014 00:00:00,,,,0,Chen 2013k,Closed,,200,,China,Not Extracted,,,,,,
+,0,Pending,20876,30/09/2014 00:00:00,30/09/2014 00:00:00,,,,0,Mu 2013,Closed,,62,,China,Not Extracted,,,,,,
+,0,Pending,20954,30/09/2014 00:00:00,30/09/2014 00:00:00,,,,0,Duan 2013c,Closed,,60,,China,Not Extracted,,,,,,
+,0,Pending,21008,30/09/2014 00:00:00,30/09/2014 00:00:00,,,,0,Li 2013am,Closed,,68,,China,Not Extracted,,,,,,
+,0,Pending,21053,15/01/2016 00:00:00,30/09/2014 00:00:00,,,,0,Fang 2013,Closed,,89,,China,Not Extracted,,TCM - (Add-On) vs. Sulpiride,,,,
+,0,Pending,21143,05/08/2016 00:00:00,30/09/2014 00:00:00,,,,0,Zhou 2013a,Closed,,80,,China,Not Extracted,,,,,,
+,0,Pending,21186,05/08/2016 00:00:00,30/09/2014 00:00:00,,,,0,Liu 2013e,Closed,,332,,China,Not Extracted,,,,,,
+,0,Pending,22132,30/01/2017 00:00:00,03/12/2014 00:00:00,,,"
+Country of origin
+
+User defined 3
+
+Notes2
+",0,NCT01615185,Closed,,96,,Taiwan,6 Weeks,,Amisulpride+Sulpride vs. Amisulpride,,,,9000100000035574
+,0,Pending,24703,24/07/2015 00:00:00,24/07/2015 00:00:00,,,,0,Yin 2014a,Closed,,65,,China,Not Extracted,,Amisulpride vs. Sulpride,,,,
+,0,Pending,24711,24/07/2015 00:00:00,24/07/2015 00:00:00,,,,0,Wu 2014c,Closed,,80,,China,Not Extracted,,Amisulpride vs. Sulpride,,,,
+,0,Pending,24741,05/08/2016 00:00:00,24/07/2015 00:00:00,,,,0,Chen 2014d,Closed,,120,,China,Not Extracted,,Aripiprazole vs. Sulpiride,,,,
+,0,Pending,24752,24/07/2015 00:00:00,24/07/2015 00:00:00,,,,0,Lu 2014c,Closed,,80,,China,Not Extracted,,Olanzapine vs. Sulpride,,,,
+,0,Pending,24806,24/07/2015 00:00:00,24/07/2015 00:00:00,,,,0,Hu 2014c,Closed,,60,,China,Not Extracted,,Amisulpride vs. Sulpride,,,,
+,0,Pending,24911,08/08/2016 00:00:00,24/07/2015 00:00:00,,,,0,Tian 2014,Closed,,140,,China,Not Extracted,,Aripiprazole vs. Sulpiride,,,,
+,0,Pending,24965,15/01/2016 00:00:00,24/07/2015 00:00:00,,,,0,Wu 2014l,Closed,,120,,China,Not Extracted,,TCM - (Add-On) vs. Sulpride,,,,
+,0,Pending,25000,24/07/2015 00:00:00,24/07/2015 00:00:00,,,,0,Sang 2015,Closed,,90,,China,Not Extracted,,Quetiapine vs. Sulpride,,,,
+,0,Pending,25009,24/07/2015 00:00:00,24/07/2015 00:00:00,,,,0,Wu 2014q,Closed,,60,,China,Not Extracted,,TCM - (Add-On) vs. Sulpride,,,,
+,0,Pending,25132,05/08/2016 00:00:00,24/07/2015 00:00:00,,,,0,Zhang 2014aq,Closed,,160,,China,Not Extracted,,Aripiprazole vs. Olanzapine//Aripiprazole vs. Risperidone//Aripiprazole vs. Sulpiride//Olanzapine vs. Risperidone//Olanzapine vs. Sulpiride//Risperidone vs. Sulpiride,,,,
+,0,Pending,25140,05/08/2016 00:00:00,24/07/2015 00:00:00,,,,0,Hou 2014a,Closed,,78,,China,Not Extracted,,Aripiprazole vs. Sulpiride,,,,
+,0,Pending,25172,24/07/2015 00:00:00,24/07/2015 00:00:00,,,,0,Liang 2014s,Closed,,120,,China,Not Extracted,,Clozapine vs. Quetiapine + Sulpride,,,,
+,0,Pending,25216,24/07/2015 00:00:00,24/07/2015 00:00:00,,,,0,Zhao 2014s,Closed,,68,,China,Not Extracted,,Amisulpride vs. Sulpride,,,,
+,0,Pending,25313,24/07/2015 00:00:00,24/07/2015 00:00:00,,,,0,Song 2014i,Closed,,80,,China,Not Extracted,,Perospirone vs. Sulpride,,,,
+,0,Pending,25458,24/07/2015 00:00:00,24/07/2015 00:00:00,,,,0,Shao 2014,Closed,,100,,China,Not Extracted,,Amisulpride vs. Sulpride,,,,
+,0,Pending,25475,24/07/2015 00:00:00,24/07/2015 00:00:00,,,,0,Liang 2014w,Closed,,96,,China,Not Extracted,,Olanzapine vs. Sulpride,,,,
+,0,Pending,25564,24/07/2015 00:00:00,24/07/2015 00:00:00,,,,0,Lou 2014b,Closed,,62,,China,Not Extracted,,Amisulpride vs. Sulpride,,,,
+,0,Pending,25608,24/07/2015 00:00:00,24/07/2015 00:00:00,,,,0,Yang 2014q,Closed,,94,,China,Not Extracted,,Amisulpride vs. Sulpride,,,,
+,0,Pending,26133,13/08/2015 00:00:00,13/08/2015 00:00:00,,,,0,Chen 2012p,Closed,,78,,China,8 Weeks,,Olanzapine vs. Sulpiride,,,,
+,0,Pending,26138,13/08/2015 00:00:00,13/08/2015 00:00:00,,,,0,Chen 2012m,Closed,,80,,China,5 Weeks,,Ziprasidone vs. Sulpiride,,,,
+,0,Pending,26251,31/03/2016 00:00:00,13/08/2015 00:00:00,,,,0,Huang 2012a,Closed,,80,,China,12 Weeks,,Risperidone vs. Sulpiride,,,,
+,0,Pending,26301,13/08/2015 00:00:00,13/08/2015 00:00:00,,,,0,Liu 2012ah,Closed,,80,,China,8 Weeks,,Quetiapine vs. Sulpiride,,,,
+,0,Pending,26318,05/08/2016 00:00:00,13/08/2015 00:00:00,,,,0,Lu 2012a,Closed,,126,,China,6 Weeks,,Aripiprazole vs. Sulpiride,,,,
+,0,Pending,27395,09/08/2016 00:00:00,09/08/2016 00:00:00,,,,0,Li 2015cn,Closed,,83,,China,Not Extracted,,,,,,
+,0,Pending,27402,09/08/2016 00:00:00,09/08/2016 00:00:00,,,,0,Zhang 2015ap,Closed,,66,,China,Not Extracted,,,,,,
+,0,Pending,27455,09/08/2016 00:00:00,09/08/2016 00:00:00,,,,0,Dong 2015h,Closed,,80,,China,Not Extracted,,,,,,
+,0,Pending,27472,09/08/2016 00:00:00,09/08/2016 00:00:00,,,,0,Chen 2015p,Closed,,113,,China,Not Extracted,,,,,,
+,0,Pending,27501,09/08/2016 00:00:00,09/08/2016 00:00:00,,,,0,Jing 2015,Closed,,100,,China,Not Extracted,,,,,,
+,0,Pending,27533,09/08/2016 00:00:00,09/08/2016 00:00:00,,,,0,Shen 2015c,Closed,,101,,China,Not Extracted,,,,,,
+,0,Pending,27546,09/08/2016 00:00:00,09/08/2016 00:00:00,,,,0,Zhang 2015ca,Closed,,100,,China,Not Extracted,,,,,,
+,0,Pending,27559,09/08/2016 00:00:00,09/08/2016 00:00:00,,,,0,Long 2015,Closed,,50,,China,Not Extracted,,,,,,
+,0,Pending,27674,27/01/2017 00:00:00,09/08/2016 00:00:00,,,,0,Ren 2015b,Closed,,60,,China,Not Extracted Not Extracted,,,,,,
+,0,Pending,27787,09/08/2016 00:00:00,09/08/2016 00:00:00,,,,0,Liu 2015aw,Closed,,60,,China,Not Extracted,,,,,,
+,0,Pending,27799,09/08/2016 00:00:00,09/08/2016 00:00:00,,,,0,Wang 2015f,Closed,,68,,China,Not Extracted,,,,,,
+,0,Pending,27819,09/08/2016 00:00:00,09/08/2016 00:00:00,,,,0,Huang 2015d,Closed,,80,,China,Not Extracted,,,,,,
+,0,Pending,27874,09/08/2016 00:00:00,09/08/2016 00:00:00,,,,0,Jiao 2015a,Closed,,144,,China,Not Extracted,,,,,,
+,0,Pending,27939,09/08/2016 00:00:00,09/08/2016 00:00:00,,,,0,Sun 2015f,Closed,,100,,China,Not Extracted,,,,,,
+,0,Pending,27965,09/08/2016 00:00:00,09/08/2016 00:00:00,,,,0,Zhang 2015f,Closed,,100,,China,Not Extracted,,,,,,
+,0,Pending,28258,09/08/2016 00:00:00,09/08/2016 00:00:00,,,,0,Qin 2015d,Closed,,122,,China,Not Extracted,,,,,,
+,0,Pending,28309,09/08/2016 00:00:00,09/08/2016 00:00:00,,,,0,Zhang 2015bn,Closed,,116,,China,Not Extracted,,,,,,
+,0,Pending,28428,09/08/2016 00:00:00,09/08/2016 00:00:00,,,,0,Yu 2015t,Closed,,85,,China,Not Extracted,,,,,,
+,0,Pending,28473,09/08/2016 00:00:00,09/08/2016 00:00:00,,,,0,Sun 2015o,Closed,,60,,China,Not Extracted,,,,,,
+,0,Pending,28597,09/08/2016 00:00:00,09/08/2016 00:00:00,,,,0,Zhang 2015am,Closed,,106,,China,Not Extracted,,,,,,
+,0,Pending,28603,09/08/2016 00:00:00,09/08/2016 00:00:00,,,,0,Lang 2015b,Closed,,85,,China,Not Extracted,,,,,,
+,0,Pending,28620,09/08/2016 00:00:00,09/08/2016 00:00:00,,,,0,Li 2016e,Closed,,60,,China,Not Extracted,,,,,,
+,0,Pending,28926,28/01/2017 00:00:00,07/03/2017 00:00:00,,,,0,Peng 2004b,,,,,,,,,,,,
