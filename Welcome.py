@@ -2,6 +2,7 @@ import streamlit as st
 from PIL import Image
 import pandas as pd
 from utils import *
+import base64
 #####################################################
 if 'reload' not in st.session_state:
     st.session_state.reload = False
@@ -20,6 +21,34 @@ if 'fieldinfo' not in st.session_state:
 if 'chosen' not in st.session_state:
     st.session_state.chosen = "CSV"
 ####################################################
+
+
+
+add_logo(logofile, "40%")
+# def add_logo():
+#     st.markdown(
+#         """
+#         <style>
+#             [data-testid="stSidebarNav"] {
+#                 background-image: url(http://placekitten.com/200/200);
+#                 background-repeat: no-repeat;
+#                 padding-top: 120px;
+#                 background-position: 20px 20px;
+#             }
+#             [data-testid="stSidebarNav"]::before {
+#                 content: "Navigate Page";
+#                 margin-left: 20px;
+#                 margin-top: 20px;
+#                 font-size: 30px;
+#                 position: relative;
+#                 top: 100px;
+#             }
+#         </style>
+#         """,
+#         unsafe_allow_html=True,
+#     )
+# add_logo()
+
 st.markdown("# MK-2 Schizophrenia ")
 st.sidebar.markdown("## Navigate page ")
 
@@ -29,8 +58,14 @@ st.sidebar.markdown('## [What it contains](#what-it-contains)')
 st.sidebar.markdown('## [What you get](#what-you-get)')
 st.sidebar.markdown('## [History and rationale](#history-and-rationale)')
 
-image = Image.open("C:/Users/c1049033/PycharmProjects/meerkatApp/dalle_meerkat_universe.png")
-st.image(image)
+
+
+
+set_background(pngfile)
+#Photo by <a href="https://unsplash.com/@resul?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Resul Mentes 🇹🇷</a> on <a href="https://unsplash.com/photos/white-clouds-and-blue-skies-DbwYNr8RPbg?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+
+# image = Image.open(pngfile)
+# st.image(image)
 
 st.markdown("## Welcome ")
 
@@ -39,6 +74,9 @@ st.markdown("## Welcome ")
 We have tried to make this a valuable, time-saving resource for reviewers of treatment trials.
 
 Currently it is focusing solely on people with schizophrenia or related problems but we hope the value of MK-2 will be obvious to a wide group of researchers and information specialists."""
+
+st.markdown('Explore the [Study](MK-2_Study_Search), [Table](MK-2_Table_Search), or the [Data](Raptor_Data_Search) search pages.')
+
 
 st.markdown("## What it is ")
 
@@ -133,4 +171,8 @@ Despite good functionality and support, this programme was not widely adopted ac
 There are benefits to use of MS Access but these are now outweighed by the advantages of more online connectivity. MeerKat has to be renamed – there are many meerkats to be found on the
 
 internet – but is nevertheless reborn in this pilot, study-based register – MK-2. We hope you enjoy it, use it, and tell us how we can improve it.
+
 """
+V_SPACE(2)
+
+st.write("Background image credit: [Abstract blue geometric shapes background Vectors by doyandesign on Vecteezy](https://www.vecteezy.com/vector-art/2715000-abstract-blue-geometric-shapes-background). The logo image on the sidebar was created with the help of [DALL-E 2](https://openai.com/dall-e-2)")
