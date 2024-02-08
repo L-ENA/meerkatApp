@@ -6,7 +6,7 @@ import json
 from datetime import datetime
 import os
 import zipfile
-
+import shutil
 
 set_background(pngfile)
 add_logo(logofile, "40%")
@@ -289,6 +289,10 @@ if st.sidebar.button('Export', key='export', type='primary'):
                 file_name="{}_{}.zip".format(option, len(st.session_state.exportindices)),
                 mime="application/zip"
             )
+
+
+
+        shutil.rmtree(tmp_name)
 
     if st.session_state.chosen != 'combo':
         st.sidebar.download_button("Press to Download",
