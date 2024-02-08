@@ -1,8 +1,7 @@
-import streamlit as st
 from PIL import Image
-import pandas as pd
 from utils import *
-import base64
+from config import *
+
 #####################################################
 if 'reload' not in st.session_state:
     st.session_state.reload = False
@@ -25,29 +24,6 @@ if 'chosen' not in st.session_state:
 
 
 add_logo(logofile, "40%")
-# def add_logo():
-#     st.markdown(
-#         """
-#         <style>
-#             [data-testid="stSidebarNav"] {
-#                 background-image: url(http://placekitten.com/200/200);
-#                 background-repeat: no-repeat;
-#                 padding-top: 120px;
-#                 background-position: 20px 20px;
-#             }
-#             [data-testid="stSidebarNav"]::before {
-#                 content: "Navigate Page";
-#                 margin-left: 20px;
-#                 margin-top: 20px;
-#                 font-size: 30px;
-#                 position: relative;
-#                 top: 100px;
-#             }
-#         </style>
-#         """,
-#         unsafe_allow_html=True,
-#     )
-# add_logo()
 
 st.markdown("# MK-2 Schizophrenia ")
 st.sidebar.markdown("## Navigate page ")
@@ -62,10 +38,6 @@ st.sidebar.markdown('## [History and rationale](#history-and-rationale)')
 
 
 set_background(pngfile)
-#Photo by <a href="https://unsplash.com/@resul?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Resul Mentes 🇹🇷</a> on <a href="https://unsplash.com/photos/white-clouds-and-blue-skies-DbwYNr8RPbg?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
-
-# image = Image.open(pngfile)
-# st.image(image)
 
 st.markdown("## Welcome ")
 
@@ -147,7 +119,7 @@ In a systematic review of treatments great efforts are made to quantify the outc
 Reviewers make great efforts to avoid multiple counting of individuals in studies who have had results of the same study reported in many publications and it is often difficult to determine the number randomized.
 """
 
-image = Image.open("C:/Users/c1049033/PycharmProjects/meerkatApp/welcome.JPG")
+image = Image.open(welcomefile)
 st.image(image)
 
 

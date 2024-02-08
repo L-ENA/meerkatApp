@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 from utils import *
+from config import *
 import requests
 import json
 from datetime import datetime
@@ -29,11 +30,6 @@ if 'chosen' not in st.session_state:
     st.session_state.chosen = "CSV"
 
 st.markdown("# Study Search ️")
-st.sidebar.markdown("# Study Search ️")
-
-
-
-
 
 st.sidebar.write("## 🛠️ Control Panel 🛠️ ️\n")
 #############################table selection
@@ -222,6 +218,7 @@ if st.sidebar.button('Export', key='export', type='primary'):
     start = time.time()
 
     thisdf = st.session_state.query_df[st.session_state.query_df.index.isin(st.session_state.exportindices)]  # get selected rows from the original input
+    time_name = datetime.now().strftime('%Y_%m_%d_%H-%M-%S')
 
     if st.session_state.chosen == "CSV":
         output = convert_df(thisdf)
@@ -238,8 +235,8 @@ if st.sidebar.button('Export', key='export', type='primary'):
         output_csv = convert_df(thisdf)#csv study file
         reportdf = get_reports(thisdf)
         output_ris = to_ris(reportdf)
-        time_name=datetime.now().strftime('%Y_%m_%d_%H-%M-%S')
-        tmp_name=os.path.join(r"C:\Users\c1049033\PycharmProjects\meerkatApp\temp",time_name)
+
+        tmp_name=os.path.join(tmppath,time_name)
         print("----------------------{}".format(tmp_name))
         try:
             os.mkdir(tmp_name)
@@ -301,6 +298,11 @@ if st.sidebar.button('Export', key='export', type='primary'):
                                                      st.session_state.chosen.lower()),
                                    "text/csv",
                                    key='download-results')
+
+    with open(studylog, 'a') as file:
+        file.write("\n{};{};{}".format(time_name, st.session_state.elasticindex,
+                                       list(thisdf["CRGStudyID"])))  # Date,Table,Studyids
+
 
 
 

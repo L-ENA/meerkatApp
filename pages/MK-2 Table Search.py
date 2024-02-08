@@ -1,8 +1,12 @@
 import streamlit as st
 import pandas as pd
 from utils import *
+from config import *
 import requests
 import json
+from datetime import datetime
+
+
 
 set_background(pngfile)
 add_logo(logofile, "40%")
@@ -14,7 +18,7 @@ add_logo(logofile, "40%")
 
 
 st.markdown("# Table Search ")
-st.sidebar.markdown("# Table Search ")
+
 
 st.sidebar.write("## 🛠️ Control Panel 🛠️ ️\n")
 #############################table selection
@@ -127,7 +131,7 @@ def convert_df(dff):
     dff=dff.to_csv(index=False).encode('utf-8')
     return dff
 
-if st.sidebar.button('Export', key='export', type='primary'):
+if st.sidebar.button('Prepare export', key='export', type='primary'):
     import time
 
     start = time.time()
@@ -146,6 +150,29 @@ if st.sidebar.button('Export', key='export', type='primary'):
     "{}_{}.{}".format(option,len(st.session_state.exportindices),st.session_state.chosen.lower()),
     "text/csv",
     key='download-results')
+
+    with open(tablelog, 'a') as file:
+
+        if option == 'Reports':
+
+            file.write("\n{};{};{}".format(datetime.now().strftime('%Y_%m_%d_%H-%M-%S'), st.session_state.elasticindex,
+                                         list(thisdf["CRGReportID"])))  # Date,Table,Studyids
+
+        elif option == 'Studies':
+            file.write("\n{};{};{}".format(datetime.now().strftime('%Y_%m_%d_%H-%M-%S'), st.session_state.elasticindex,
+                                         list(thisdf["CRGStudyID"])))  # Date,Table,Studyids
+        elif option == 'Outcomes':
+            file.write("\n{};{};{}".format(datetime.now().strftime('%Y_%m_%d_%H-%M-%S'), st.session_state.elasticindex,
+                                         list(thisdf["OutcomeID"])))  # Date,Table,Studyids
+        elif option == 'Interventions':
+            file.write("\n{};{};{}".format(datetime.now().strftime('%Y_%m_%d_%H-%M-%S'), st.session_state.elasticindex,
+                                         list(thisdf["InterventionID"])))  # Date,Table,Studyids
+        elif option == 'Health Conditions':
+            file.write("\n{};{};{}".format(datetime.now().strftime('%Y_%m_%d_%H-%M-%S'), st.session_state.elasticindex,
+                                         list(thisdf["HealthCareConditionID"])))  # Date,Table,Studyids
+
+
+
 
 
 

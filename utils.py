@@ -3,9 +3,6 @@ import streamlit as st
 from st_aggrid import GridOptionsBuilder, AgGrid, GridUpdateMode, DataReturnMode, ColumnsAutoSizeMode
 import base64
 
-logofile="C:/Users/c1049033/PycharmProjects/meerkatApp/logo.png"
-pngfile="C:/Users/c1049033/PycharmProjects/meerkatApp/resul-mentes-DbwYNr8RPbg-unsplash.jpg"
-pngfile="C:/Users/c1049033/PycharmProjects/meerkatApp/geometriclight.jpg"
 
 def V_SPACE(lines):
     for _ in range(lines):
@@ -175,8 +172,3 @@ def add_logo(png_file, imsize):
         unsafe_allow_html=True,
     )
 
-outcomefields=["OutcomeID",	"OutcomeDescription"]
-interventionfields=["InterventionID",	"InterventionDescription"]
-conditionfields=["HealthCareConditionID",	"HealthCareConditionDescription"]
-studyfields=["CENTRALStudyID","CRGStudyID","ShortName","StatusofStudy","TrialistContactDetails","CENTRALSubmissionStatus","Notes","DateEntered","DateToCENTRAL","DateEdited","Search_Tagged","UDef1","UDef2","UDef3","UDef4","UDef5","ISRCTN","UDef6","UDef7","UDef8","UDef9","UDef10"]
-reportfields=["Abstract","Authors","CENTRALReportID","CENTRALSubmissionStatus","CRGReportID","City","CopyStatus","DateEdited","Dateentered","DatetoCENTRAL","DupString","Edition","Editors","Issue","Journal","Language","Medium","Notes","OriginalTitle","Pages","PublicationTypeID","Publisher","ReportNumber","Title","TypeofReportID","UDef1","UDef10","UDef2","UDef3","UDef4","UDef5","UDef6","UDef7","UDef8","UDef9","Volume","Year"]
