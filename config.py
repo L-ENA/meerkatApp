@@ -1,13 +1,20 @@
 import os
 
 basepath=r"C:\Users\c1049033\PycharmProjects\meerkatApp"
+
 tmppath=os.path.join(basepath, "temp")
+logpath=os.path.join(basepath, "log")
 logofile=os.path.join(basepath, "images", "logo.png")
 pngfile=os.path.join(basepath, "images", "geometriclight.jpg")
 welcomefile=os.path.join(basepath, "images", "welcome.JPG")
 studylog=os.path.join(basepath, "log", "log_studies.txt")
 tablelog=os.path.join(basepath, "log", "log_tables.txt")
 raptorlog=os.path.join(basepath, "log", "log_raptor.txt")
+
+if not os.path.exists(logpath):
+    os.mkdir(logpath)
+if not os.path.exists(tmppath):
+    os.mkdir(tmppath)
 
 # tmppath=r"C:\Users\c1049033\PycharmProjects\meerkatApp\temp"
 # logofile="C:/Users/c1049033/PycharmProjects/meerkatApp/images/logo.png"
