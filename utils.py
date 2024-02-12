@@ -1,8 +1,9 @@
-import pandas as pd
+import requests
 import streamlit as st
 from st_aggrid import GridOptionsBuilder, AgGrid, GridUpdateMode, DataReturnMode, ColumnsAutoSizeMode
 import base64
-
+import json
+import pandas as pd
 
 def V_SPACE(lines):
     for _ in range(lines):
@@ -172,3 +173,42 @@ def add_logo(png_file, imsize):
         unsafe_allow_html=True,
     )
 
+###################################show results and select hits
+@st.cache_data
+def get_data(q,ind):
+    res = requests.post('http://localhost:9090/api/direct_retrieval',
+                        json={"input": q,
+                              "index": ind})
+    print(res)
+    json_data = json.loads(res.text)
+    return json_data
+
+@st.cache_data
+def get_study_data(q, ind):
+    res = requests.post('http://localhost:9090/api/direct_retrieval',
+                        json={"input": q,
+                              "index": ind})
+    print(res)
+    json_dat = json.loads(res.text)
+    json_data=pd.DataFrame(json_dat['response'])
+    print(json_data.columns)
+    if json_data.shape[0]>0:
+
+        if ind == 'tblreport':
+            res = requests.post('http://localhost:9090/api/studyfromanyid', json={"table": "report", "input": list(json_data['CRGReportID'])})
+
+        elif ind == 'tblstudy':
+            res = requests.post('http://localhost:9090/api/studyfromanyid', json={"table": "study", "input": list(json_data['CRGStudyID'])})
+        elif ind == 'tbloutcome':
+            res = requests.post('http://localhost:9090/api/studyfromanyid', json={"table": "outcome", "input": list(json_data['OutcomeID'])})
+        elif ind == 'tblintervention':
+            res = requests.post('http://localhost:9090/api/studyfromanyid', json={"table": "intervention", "input": list(json_data['InterventionID'])})
+        elif ind == 'tblhealthcarecondition':
+            res = requests.post('http://localhost:9090/api/studyfromanyid', json={"table": "condition", "input": list(json_data['HealthCareConditionID'])})
+
+        j_data = json.loads(res.text)
+
+        return j_data
+    else:
+        print('-------------no data-------------------------------------')
+        return json_dat

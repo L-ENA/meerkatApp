@@ -12,22 +12,7 @@ import shutil
 set_background(pngfile)
 add_logo(logofile, "40%")
 
-if 'reload' not in st.session_state:
-    st.session_state.reload = False
-if 'previous_query' not in st.session_state:
-    st.session_state.previous_query = ""
-if 'elasticindex' not in st.session_state:
-    st.session_state.elasticindex = ""
-if 'nhits' not in st.session_state:
-    st.session_state.nhits = 0
-if 'exportindices' not in st.session_state:
-    st.session_state.exportindices = []
-if 'query_df' not in st.session_state:
-    st.session_state.query_df = pd.DataFrame()
-if 'fieldinfo' not in st.session_state:
-    st.session_state.fieldinfo = ", ".join(reportfields)
-if 'chosen' not in st.session_state:
-    st.session_state.chosen = "CSV"
+
 
 st.markdown("# Study Search ️")
 
@@ -144,39 +129,11 @@ def get_reports(some_df):
 #     return new_df
 
 
-@st.cache_data
-def get_data(q):
-    res = requests.post('http://localhost:9090/api/direct_retrieval',
-                        json={"input": q,
-                              "index": st.session_state.elasticindex})
-    print(res)
-    json_dat = json.loads(res.text)
-    json_data=pd.DataFrame(json_dat['response'])
-    print(json_data.columns)
-    if json_data.shape[0]>0:
 
-        if st.session_state.elasticindex == 'tblreport':
-            res = requests.post('http://localhost:9090/api/studyfromanyid', json={"table": "report", "input": list(json_data['CRGReportID'])})
-
-        elif st.session_state.elasticindex == 'tblstudy':
-            res = requests.post('http://localhost:9090/api/studyfromanyid', json={"table": "study", "input": list(json_data['CRGStudyID'])})
-        elif st.session_state.elasticindex == 'tbloutcome':
-            res = requests.post('http://localhost:9090/api/studyfromanyid', json={"table": "outcome", "input": list(json_data['OutcomeID'])})
-        elif st.session_state.elasticindex == 'tblintervention':
-            res = requests.post('http://localhost:9090/api/studyfromanyid', json={"table": "intervention", "input": list(json_data['InterventionID'])})
-        elif st.session_state.elasticindex == 'tblhealthcarecondition':
-            res = requests.post('http://localhost:9090/api/studyfromanyid', json={"table": "condition", "input": list(json_data['HealthCareConditionID'])})
-
-        j_data = json.loads(res.text)
-
-        return j_data
-    else:
-        print('-------------no data-------------------------------------')
-        return json_dat
 
 if st.text_input("## Enter search query 🔎", key="query_{}".format(option), placeholder="Abstract:schizo* AND Authors:*dams"):
     #st.session_state.reload=True
-    json_data=get_data(st.session_state["query_{}".format(option)])
+    json_data=get_study_data(st.session_state["query_{}".format(option)], st.session_state.elasticindex)
     # print(json_data.keys())
     st.session_state.query_df = pd.DataFrame(json_data['response'])
     # print(data_df.head())

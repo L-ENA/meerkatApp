@@ -47,6 +47,10 @@ elif option=='Health Conditions':
     st.session_state.elasticindex='tblhealthcarecondition'
     st.session_state.fieldinfo = ", ".join(conditionfields)
 
+if st.session_state.elasticindex != st.session_state.last_option:
+    st.session_state.previous_query=""
+    st.session_state.last_option=st.session_state.elasticindex
+
 if 'export{}'.format(option) not in st.session_state:
     st.session_state['export{}'.format(option)] = pd.DataFrame()
 ################################export
@@ -83,22 +87,10 @@ with st.expander("🛈 Searchable fields for '{}'".format(option)):
 st.markdown('##')
 
 
-# You can access the value at any point with:
-
-
-###################################show results and select hits
-@st.cache_data
-def get_data(q):
-    res = requests.post('http://localhost:9090/api/direct_retrieval',
-                        json={"input": q,
-                              "index": st.session_state.elasticindex})
-    print(res)
-    json_data = json.loads(res.text)
-    return json_data
 
 if st.text_input("Enter search query 🔎", key="query_{}".format(option), placeholder="Abstract:schizo* AND Authors:*dams"):
     #st.session_state.reload=True
-    json_data=get_data(st.session_state["query_{}".format(option)])
+    json_data=get_data(st.session_state["query_{}".format(option)], st.session_state.elasticindex)
     # print(json_data.keys())
     st.session_state.query_df = pd.DataFrame(json_data['response'])
     # print(data_df.head())
