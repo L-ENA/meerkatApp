@@ -4,6 +4,8 @@ from st_aggrid import GridOptionsBuilder, AgGrid, GridUpdateMode, DataReturnMode
 import base64
 import json
 import pandas as pd
+import os
+import zipfile
 
 def V_SPACE(lines):
     for _ in range(lines):
@@ -91,11 +93,11 @@ def to_ris(df):
         lines = adding(lines, "SP", str(row["Pages"]))
         lines = adding(lines, "PY", str(row["Year"]))
 
-        lines = adding(lines, "AD", str(row["UDef3"]))
-        lines = adding(lines, "SN", str(row["UDef4"]))
-        lines = adding(lines, "DO", str(row["UDef2"]))
-        lines = adding(lines, "ET", str(row["Edition"]))
-        lines = adding(lines, "ID", str(row["CRGReportID"]))
+        lines = adding(lines, "AD", str(row["User defined 3"]))
+        lines = adding(lines, "SN", str(row["User defined 4"]))
+        lines = adding(lines, "DO", str(row["User defined 2"]))
+        #lines = adding(lines, "ET", str(row["Edition"]))
+        lines = adding(lines, "ID", str(row["ReportNumber"]))
 
         #####################add a notes field
 
@@ -103,7 +105,7 @@ def to_ris(df):
         if study:
             notes="This record belongs to study <{}>.".format(study)
         else:
-            notes="This is a single record. Use the Study search tab on the MK-2 website to retrieve all assonciated reports. On study search, keep the automatically selected 'Reports' setting and use this query: CRGReportID:{}".format(str(row["CRGReportID"]))
+            notes="This is a single record. Use the Study search tab on the MK-2 website to retrieve all assonciated reports. On study search, keep the automatically selected 'Reports' setting and use this query: ReportNumber:{}".format(str(row["ReportNumber"]))
 
         lines.append("N1  - {}".format(notes))
         lines.append('ER  - ')
@@ -173,12 +175,42 @@ def add_logo(png_file, imsize):
         unsafe_allow_html=True,
     )
 
+
+def zip(src, dst):
+    zf = zipfile.ZipFile(dst, "w", zipfile.ZIP_DEFLATED)
+    abs_src = os.path.abspath(src)
+    for dirname, subdirs, files in os.walk(src):
+        for filename in files:
+            absname = os.path.abspath(os.path.join(dirname, filename))
+            arcname = absname[len(abs_src) + 1:]
+            print('zipping %s as %s' % (os.path.join(dirname, filename),
+                                        arcname))
+            zf.write(absname, arcname)
+    zf.close()
+
+
+def convert_df(dff):
+    print('SHAPE')
+    print(dff.shape)
+    dff=dff.to_csv(index=False).encode('utf-8')
+    return dff
+
+def commenter(q):
+    to_comment=["{","}","[","]"]
+    for cha in to_comment:
+        q=q.replace(cha, "\\"+cha)
+    return q
 ###################################show results and select hits
 @st.cache_data
 def get_data(q,ind):
+    print("------------------")
+    print(q)
+    print(commenter(q))
+    print("------------------")
     res = requests.post('http://localhost:9090/api/direct_retrieval',
-                        json={"input": q,
+                        json={"input": commenter(q),
                               "index": ind})
+    print("Response: ")
     print(res)
     json_data = json.loads(res.text)
     return json_data
@@ -186,8 +218,9 @@ def get_data(q,ind):
 @st.cache_data
 def get_study_data(q, ind):
     res = requests.post('http://localhost:9090/api/direct_retrieval',
-                        json={"input": q,
-                              "index": ind})
+                        json={"input": commenter(q),
+                          "index": ind})
+    print("Response: ")
     print(res)
     json_dat = json.loads(res.text)
     json_data=pd.DataFrame(json_dat['response'])
@@ -195,7 +228,7 @@ def get_study_data(q, ind):
     if json_data.shape[0]>0:
 
         if ind == 'tblreport':
-            res = requests.post('http://localhost:9090/api/studyfromanyid', json={"table": "report", "input": list(json_data['CRGReportID'])})
+            res = requests.post('http://localhost:9090/api/studyfromanyid', json={"table": "report", "input": list(json_data['ReportNumber'])})
 
         elif ind == 'tblstudy':
             res = requests.post('http://localhost:9090/api/studyfromanyid', json={"table": "study", "input": list(json_data['CRGStudyID'])})
@@ -212,3 +245,38 @@ def get_study_data(q, ind):
     else:
         print('-------------no data-------------------------------------')
         return json_dat
+
+@st.cache_data
+def get_reports(some_df):
+
+    targets=list(some_df["CRGStudyID"])
+    ##print("---------------------------------------getting reports for {}".format(targets))
+    outdfs=[]
+    #ts=[targets[i:i+15] for i in range(0, len(targets), 15)]
+    total = len(targets)
+    progress_text = "Collected data for 0/{} studies".format(total)
+    my_bar = st.sidebar.progress(0, text=progress_text)
+
+    for count, t in enumerate(targets):
+        my_bar.progress((count+1)/total, text="Collected data for {}/{} studies".format(count+1,total))
+        print(t)
+        res=requests.post('http://localhost:9090/api/reportsfromstudyid', json={"input":[t]})
+        #print(res)
+        #print(res.text)
+        json_dat = json.loads(res.text)
+        new_df = pd.DataFrame(json_dat['response'])
+
+        # print("xxxxx")
+        # print(list(new_df['CRGReportID']))
+        # print(new_df.shape)
+        # print(json_dat['reportids'])
+
+        #print(json_dat['studyids'])
+
+
+        #new_df['CRGStudyID'] = json_dat['studyids']
+        new_df['CRGStudyID'] = t
+        outdfs.append(new_df)
+    new_df=pd.concat(outdfs)
+    #print(new_df.shape)
+    return new_df

@@ -5,7 +5,8 @@ from config import *
 import requests
 import json
 from datetime import datetime
-
+if 'last_option' not in st.session_state:#the last index that was selected for searching. to determine if previous_query can be reset to ""
+    st.session_state.last_option = ""
 
 
 set_background(pngfile)
@@ -107,9 +108,9 @@ if st.text_input("Enter search query 🔎", key="query_{}".format(option), place
             st.session_state.reload = False
         else:
             st.session_state.reload = True
-        print(st.session_state.reload)
-        print(st.session_state["query_{}".format(option)])
-        print(st.session_state.previous_query)
+        # print(st.session_state.reload)
+        # print(st.session_state["query_{}".format(option)])
+        # print(st.session_state.previous_query)
         tablemaker(st.session_state.query_df, option)
         st.session_state.previous_query=st.session_state["query_{}".format(option)]
         #data_df["Select"] = [False for i in data_df.index]
@@ -148,7 +149,7 @@ if st.sidebar.button('Prepare export', key='export', type='primary'):
         if option == 'Reports':
 
             file.write("\n{};{};{}".format(datetime.now().strftime('%Y_%m_%d_%H-%M-%S'), st.session_state.elasticindex,
-                                         list(thisdf["CRGReportID"])))  # Date,Table,Studyids
+                                         list(thisdf["ReportNumber"])))  # Date,Table,Studyids
 
         elif option == 'Studies':
             file.write("\n{};{};{}".format(datetime.now().strftime('%Y_%m_%d_%H-%M-%S'), st.session_state.elasticindex,

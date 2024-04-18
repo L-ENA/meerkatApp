@@ -82,40 +82,40 @@ st.markdown('##')
 
 
 ###################################show results and select hits
-@st.cache_data
-def get_reports(some_df):
-
-    targets=list(some_df["CRGStudyID"])
-    ##print("---------------------------------------getting reports for {}".format(targets))
-    outdfs=[]
-    #ts=[targets[i:i+15] for i in range(0, len(targets), 15)]
-    total = len(targets)
-    progress_text = "Collected data for 0/{} studies".format(total)
-    my_bar = st.sidebar.progress(0, text=progress_text)
-
-    for count, t in enumerate(targets):
-        my_bar.progress((count+1)/total, text="Collected data for {}/{} studies".format(count+1,total))
-        print(t)
-        res=requests.post('http://localhost:9090/api/reportsfromstudyid', json={"input":[t]})
-        #print(res)
-        #print(res.text)
-        json_dat = json.loads(res.text)
-        new_df = pd.DataFrame(json_dat['response'])
-
-        # print("xxxxx")
-        # print(list(new_df['CRGReportID']))
-        # print(new_df.shape)
-        # print(json_dat['reportids'])
-
-        #print(json_dat['studyids'])
-
-
-        #new_df['CRGStudyID'] = json_dat['studyids']
-        new_df['CRGStudyID'] = t
-        outdfs.append(new_df)
-    new_df=pd.concat(outdfs)
-    #print(new_df.shape)
-    return new_df
+# @st.cache_data
+# def get_reports(some_df):
+#
+#     targets=list(some_df["CRGStudyID"])
+#     ##print("---------------------------------------getting reports for {}".format(targets))
+#     outdfs=[]
+#     #ts=[targets[i:i+15] for i in range(0, len(targets), 15)]
+#     total = len(targets)
+#     progress_text = "Collected data for 0/{} studies".format(total)
+#     my_bar = st.sidebar.progress(0, text=progress_text)
+#
+#     for count, t in enumerate(targets):
+#         my_bar.progress((count+1)/total, text="Collected data for {}/{} studies".format(count+1,total))
+#         print(t)
+#         res=requests.post('http://localhost:9090/api/reportsfromstudyid', json={"input":[t]})
+#         #print(res)
+#         #print(res.text)
+#         json_dat = json.loads(res.text)
+#         new_df = pd.DataFrame(json_dat['response'])
+#
+#         # print("xxxxx")
+#         # print(list(new_df['CRGReportID']))
+#         # print(new_df.shape)
+#         # print(json_dat['reportids'])
+#
+#         #print(json_dat['studyids'])
+#
+#
+#         #new_df['CRGStudyID'] = json_dat['studyids']
+#         new_df['CRGStudyID'] = t
+#         outdfs.append(new_df)
+#     new_df=pd.concat(outdfs)
+#     #print(new_df.shape)
+#     return new_df
 
 # @st.cache_data
 # def get_reports(some_df):
@@ -160,11 +160,7 @@ if st.text_input("## Enter search query 🔎", key="query_{}".format(option), pl
 
 
 
-def convert_df(dff):
-    print('SHAPE')
-    print(dff.shape)
-    dff=dff.to_csv(index=False).encode('utf-8')
-    return dff
+
 
 
 
@@ -221,17 +217,7 @@ if st.sidebar.button('Export', key='export', type='primary'):
         #     for file in glob.glob('{}/*'.format(tmp_name)):
         #         f.write(file)
 
-        def zip(src, dst):
-            zf = zipfile.ZipFile(dst, "w", zipfile.ZIP_DEFLATED)
-            abs_src = os.path.abspath(src)
-            for dirname, subdirs, files in os.walk(src):
-                for filename in files:
-                    absname = os.path.abspath(os.path.join(dirname, filename))
-                    arcname = absname[len(abs_src) + 1:]
-                    print('zipping %s as %s' % (os.path.join(dirname, filename),
-                                          arcname))
-                    zf.write(absname, arcname)
-            zf.close()
+
 
 
         zip(tmp_name, zipped)
