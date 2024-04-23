@@ -3,24 +3,7 @@ from utils import *
 from config import *
 import pandas as pd
 #####################################################
-if 'reload' not in st.session_state:#reloading output tables
-    st.session_state.reload = False
-if 'previous_query' not in st.session_state:#the last query, to make sure table selection state is retained
-    st.session_state.previous_query = ""
-if 'elasticindex' not in st.session_state:#elasticindex to search
-    st.session_state.elasticindex = ""
-if 'nhits' not in st.session_state:#how many hots did the search produce
-    st.session_state.nhits = 0
-if 'exportindices' not in st.session_state:#which rows in the results table were selected for export
-    st.session_state.exportindices = []
-if 'query_df' not in st.session_state:#data table with results
-    st.session_state.query_df = pd.DataFrame()
-if 'fieldinfo' not in st.session_state:
-    st.session_state.fieldinfo = ", ".join(reportfields)
-if 'chosen' not in st.session_state:
-    st.session_state.chosen = "CSV"
-if 'last_option' not in st.session_state:#the last index that was selected for searching. to determine if previous_query can be reset to ""
-    st.session_state.last_option = ""
+session_state_init("Welcome")
 ####################################################
 
 

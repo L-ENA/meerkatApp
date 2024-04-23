@@ -16,7 +16,9 @@ add_logo(logofile, "40%")
 # if 'num_export' not in st.session_state:
 #     st.session_state['num_export']=0
 
-
+if st.session_state.last_page != "RAPTOR":#check if the user changed the page, if yes then clear cache to avoil table re-loading with different headings bug
+    session_state_init("RAPTOR")
+    st.cache_data.clear()
 
 
 set_background(pngfile)

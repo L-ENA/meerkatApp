@@ -5,9 +5,10 @@ from config import *
 import requests
 import json
 from datetime import datetime
-if 'last_option' not in st.session_state:#the last index that was selected for searching. to determine if previous_query can be reset to ""
-    st.session_state.last_option = ""
 
+if st.session_state.last_page != "Table":
+    session_state_init("Table")
+    st.cache_data.clear()
 
 set_background(pngfile)
 add_logo(logofile, "40%")

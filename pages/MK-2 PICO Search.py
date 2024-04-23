@@ -7,7 +7,9 @@ import json
 from datetime import datetime
 from annotated_text import annotated_text, annotation
 
-
+if st.session_state.last_page != "PICO":
+    session_state_init("PICO")
+    st.cache_data.clear()
 
 set_background(pngfile)
 add_logo(logofile, "40%")

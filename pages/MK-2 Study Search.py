@@ -12,7 +12,9 @@ import shutil
 set_background(pngfile)
 add_logo(logofile, "40%")
 
-
+if st.session_state.last_page != "Study":
+    session_state_init("Study")
+    st.cache_data.clear()
 
 st.markdown("# Study Search ️")
 
