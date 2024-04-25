@@ -16,7 +16,7 @@ add_logo(logofile, "40%")
 # if 'num_export' not in st.session_state:
 #     st.session_state['num_export']=0
 
-if st.session_state.last_page != "RAPTOR":#check if the user changed the page, if yes then clear cache to avoil table re-loading with different headings bug
+if 'last_page' not in st.session_state or st.session_state.last_page != "RAPTOR":#check if the user changed the page, if yes then clear cache to avoil table re-loading with different headings bug
     session_state_init("RAPTOR")
     st.cache_data.clear()
 
@@ -28,7 +28,9 @@ st.sidebar.markdown("# Raptor Data Search 🦖")
 
 "Welcome to the Data Search. We extracted bias ratings, outcome data, and study characteristics from Cochrane Schizophrenia reviews. These datapoints can be re-used by researchers who would like to include the same studies in their meta-analyses. We do advise users to always manually check exported data for completeness. Data can be used, for example, to simulate a 'second reviewer' during data extraction."
 
+V_SPACE(1)
 
+st.markdown("Please see the video on the bottom of this page for further information on using this website. More information about the RAPTOR dataset and how it was curated can be found in our paper: Schmidt, L., Shokraneh, F., Steinhausen, K., Adams, CE. Introducing RAPTOR: RevMan Parsing Tool for Reviewers. Syst Rev 8, 151 (2019). [https://doi.org/10.1186/s13643-019-1070-0](https://doi.org/10.1186/s13643-019-1070-0)")
 
 st.sidebar.write("## 🛠️ Control Panel 🛠️ ️\n")
 #############################table selection
@@ -157,7 +159,9 @@ if st.sidebar.button('Prepare export', key='export', type='primary'):
 
 
 
+V_SPACE(3)
 
+st.video("https://youtu.be/Em6vD6KYuMQ?si=BzFunzhXuiUXTpAu")
 
 
 

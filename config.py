@@ -25,5 +25,6 @@ if not os.path.exists(tmppath):
 outcomefields=["OutcomeID",	"OutcomeDescription"]
 interventionfields=["InterventionID",	"InterventionDescription"]
 conditionfields=["HealthCareConditionID",	"HealthCareConditionDescription"]
-studyfields=["CENTRALStudyID","CRGStudyID","ShortName","StatusofStudy","TrialistContactDetails","CENTRALSubmissionStatus","Notes","DateEntered","DateToCENTRAL","DateEdited","Search_Tagged","UDef1","UDef2","UDef3","UDef4","UDef5","ISRCTN","UDef6","UDef7","UDef8","UDef9","UDef10"]
-reportfields=["Abstract","Authors","CENTRALReportID","CENTRALSubmissionStatus","CRGReportID","City","CopyStatus","DateEdited","Dateentered","DatetoCENTRAL","DupString","Edition","Editors","Issue","Journal","Language","Medium","Notes","OriginalTitle","Pages","PublicationTypeID","Publisher","ReportNumber","Title","TypeofReportID","UDef1","UDef10","UDef2","UDef3","UDef4","UDef5","UDef6","UDef7","UDef8","UDef9","Volume","Year"]
+studyfields=['CENTRALStudyID', 'CRGStudyID', 'ShortName', 'StatusofStudy', 'TrialistContactDetails', 'CENTRALSubmissionStatus', 'Notes', 'DateEntered', 'DateToCENTRAL', 'DateEdited', 'Search_Tagged', 'Randomized', 'Country', 'Length', 'UDef4', 'Arms', 'ISRCTN', 'UDef6', 'UDef7', 'UDef8', 'UDef10', 'UDef9']
+reportfields=['Authors', 'UDef7', 'Year', 'Title', 'Journal', 'Volume', 'Issue', 'Pages', 'Abstract', 'Notes', 'UDef6', 'Language', 'CopyStatus', 'ReportNumber', 'Dateentered', 'User defined 2', 'User defined 3', 'User defined 4']
+

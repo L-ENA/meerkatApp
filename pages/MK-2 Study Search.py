@@ -12,9 +12,10 @@ import shutil
 set_background(pngfile)
 add_logo(logofile, "40%")
 
-if st.session_state.last_page != "Study":
+if 'last_page' not in st.session_state or st.session_state.last_page != "Study":
     session_state_init("Study")
     st.cache_data.clear()
+
 
 st.markdown("# Study Search ️")
 
@@ -250,7 +251,7 @@ if st.sidebar.button('Export', key='export', type='primary'):
 
 
 
+V_SPACE(3)
 
-
-
+st.video("https://youtu.be/0D_38bd55Iw?si=RmdLBnFTW5V75eKY")
 

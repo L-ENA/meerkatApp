@@ -33,7 +33,8 @@ We have tried to make this a valuable, time-saving resource for reviewers of tre
 Currently it is focusing solely on people with schizophrenia or related problems but we hope the value of MK-2 will be obvious to a wide group of researchers and information specialists."""
 
 st.markdown('Explore the [Study](MK-2_Study_Search), [Table](MK-2_Table_Search), or the [Data](Raptor_Data_Search) search pages.')
-
+V_SPACE(1)
+"MK-2 was last updated on xx/xx/2024 using the following sources: XX, YY, ZZ"
 
 st.markdown("## What it is ")
 

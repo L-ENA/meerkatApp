@@ -29,6 +29,8 @@ def session_state_init(current_page):
         st.session_state.chosen = "CSV"
     if 'last_option' not in st.session_state:  # the last index that was selected for searching. to determine if previous_query can be reset to ""
         st.session_state.last_option = ""
+    if 'submitted' not in st.session_state:  # the last index that was selected for searching. to determine if previous_query can be reset to ""
+        st.session_state.submitted = False
     st.session_state.last_page=current_page
 
 def V_SPACE(lines):
@@ -46,9 +48,10 @@ def tablemaker(df, this_key):
 
 
 
-
-    df.insert(loc=0, column='Select', value=["" for i in list(df.index)])
-
+    try:
+        df.insert(loc=0, column='Select', value=["" for i in list(df.index)])
+    except:
+        pass
 
     gb=gbmaker(df)
 
@@ -225,7 +228,7 @@ def commenter(q):
         q=q.replace(cha, "\\"+cha)
     return q
 ###################################show results and select hits
-@st.cache_data
+@st.cache_data(show_spinner=False)
 def get_data(q,ind):
     print("------------------")
     print(q)
@@ -239,7 +242,7 @@ def get_data(q,ind):
     json_data = json.loads(res.text)
     return json_data
 
-@st.cache_data
+@st.cache_data(show_spinner=False)
 def get_study_data(q, ind):
     res = requests.post('http://localhost:9090/api/direct_retrieval',
                         json={"input": commenter(q),
@@ -270,11 +273,11 @@ def get_study_data(q, ind):
         print('-------------no data-------------------------------------')
         return json_dat
 
-@st.cache_data
+@st.cache_data(show_spinner=False)
 def get_reports(some_df):
 
     targets=list(some_df["CRGStudyID"])
-    ##print("---------------------------------------getting reports for {}".format(targets))
+    print("---------------------------------------getting reports for {}".format(targets))
     outdfs=[]
     #ts=[targets[i:i+15] for i in range(0, len(targets), 15)]
     total = len(targets)

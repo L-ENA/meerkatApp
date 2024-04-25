@@ -6,7 +6,7 @@ import requests
 import json
 from datetime import datetime
 
-if st.session_state.last_page != "Table":
+if 'last_page' not in st.session_state or st.session_state.last_page != "Table":
     session_state_init("Table")
     st.cache_data.clear()
 
@@ -167,7 +167,10 @@ if st.sidebar.button('Prepare export', key='export', type='primary'):
 
 
 
+V_SPACE(3)
 
+st.video("https://youtu.be/B8KVPsmJwxk?si=W-JC5LhO7kUgJtLT")
+st.video("https://youtu.be/rJcg7ZH8weA?si=TcQi8x08OKltBYZA")
 
 
 
