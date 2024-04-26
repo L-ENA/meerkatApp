@@ -135,7 +135,7 @@ if st.sidebar.button('Prepare export', key='export', type='primary'):
     if st.session_state.chosen == "CSV":
         output = convert_df(thisdf)
     else:
-        output=to_ris(thisdf)
+        output=to_ris(thisdf,ignore_0=False)#still export records even if they are report number 0
 
     print(f'Time to convert: {time.time() - start}')
 

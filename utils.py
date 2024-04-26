@@ -105,9 +105,13 @@ def adding(lines,key, value):
         lines.append("{}  - {}".format(key,value.strip()))
     return lines
 
-def to_ris(df):
+def to_ris(df, ignore_0=True):
     lines = []
     for i,row in df.iterrows():
+        if ignore_0:
+            if str(row["ReportNumber"])=="0":
+                pass
+
         lines.append('TY  - JOUR')
         lines=adding(lines,"T1", str(row["Title"]))
         lines = adding(lines, "N2", str(row["Abstract"]))
@@ -118,21 +122,33 @@ def to_ris(df):
 
         lines = adding(lines, "JO", str(row["Journal"]))
         lines = adding(lines, "SP", str(row["Pages"]))
-        lines = adding(lines, "PY", str(row["Year"]))
+        try:
+            lines = adding(lines, "PY", str(int(row["Year"])))#or else we will get a float, ie. year 2022.0
+        except:
+            lines = adding(lines, "PY", str(row["Year"]))
 
         lines = adding(lines, "AD", str(row["User defined 3"]))
         lines = adding(lines, "SN", str(row["User defined 4"]))
         lines = adding(lines, "DO", str(row["User defined 2"]))
         #lines = adding(lines, "ET", str(row["Edition"]))
-        lines = adding(lines, "ID", str(row["ReportNumber"]))
+
+        rep_num=str(row["ReportNumber"])
+        if rep_num=="0":
+            lines = adding(lines, "ID", "unk_{}".format(i))
+            notes = "This is a single record for which we weren't able to retrieve data or match a study record."
+
+
+        else:
+            lines = adding(lines, "ID", rep_num)
+            notes = "This is a single record. Use the Study search tab on the MK-2 website to retrieve all assonciated reports. On study search, keep the automatically selected 'Reports' setting and use this query: ReportNumber:{}".format(
+                str(row["ReportNumber"]))
 
         #####################add a notes field
 
         study=row.get("CRGStudyID", False)
         if study:
             notes="This record belongs to study <{}>.".format(study)
-        else:
-            notes="This is a single record. Use the Study search tab on the MK-2 website to retrieve all assonciated reports. On study search, keep the automatically selected 'Reports' setting and use this query: ReportNumber:{}".format(str(row["ReportNumber"]))
+
 
         lines.append("N1  - {}".format(notes))
         lines.append('ER  - ')

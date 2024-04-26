@@ -264,7 +264,7 @@ if st.sidebar.button('Export', key='export', type='primary'):
                 mime="application/zip"
             )
 
-        shutil.rmtree(tmp_name)
+        shutil.rmtree(tmppath)
 
     if st.session_state.chosen != 'combo':
         st.sidebar.download_button("Press to Download",
