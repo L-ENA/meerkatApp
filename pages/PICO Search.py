@@ -36,26 +36,19 @@ V_SPACE(1)
 V_SPACE(1)
 "For more information, see the tutorial video on the bottom of this page."
 
-if not "picogroups" in st.session_state:
-    st.session_state.picogroups = []
-if not "multiselect" in st.session_state:
-    st.session_state.multiselect = []
-if not "searchdoc" in st.session_state:
-    st.session_state.searchdoc = []
-if not "picooptions" in st.session_state:
-    st.session_state.picooptions={}
 
-    json_data=get_data("*", "tblintervention")
-    qdf = pd.DataFrame(json_data['response'])
-    st.session_state.picooptions['Intervention']=sorted(list(set(qdf['InterventionDescription'])))
 
-    json_data = get_data("*", "tbloutcome")
-    qdf = pd.DataFrame(json_data['response'])
-    st.session_state.picooptions['Outcome'] = sorted(list(set(qdf['OutcomeDescription'])))
+json_data=get_data("*", "tblintervention")
+qdf = pd.DataFrame(json_data['response'])
+st.session_state.picooptions['Intervention']=sorted(list(set(qdf['InterventionDescription'])))
 
-    json_data = get_data("*", "tblhealthcarecondition")
-    qdf = pd.DataFrame(json_data['response'])
-    st.session_state.picooptions['Health Condition'] = sorted(list(set(qdf['HealthCareConditionDescription'])))
+json_data = get_data("*", "tbloutcome")
+qdf = pd.DataFrame(json_data['response'])
+st.session_state.picooptions['Outcome'] = sorted(list(set(qdf['OutcomeDescription'])))
+
+json_data = get_data("*", "tblhealthcarecondition")
+qdf = pd.DataFrame(json_data['response'])
+st.session_state.picooptions['Health Condition'] = sorted(list(set(qdf['HealthCareConditionDescription'])))
 
 
 

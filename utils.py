@@ -31,6 +31,16 @@ def session_state_init(current_page):
         st.session_state.last_option = ""
     if 'submitted' not in st.session_state:  # the last index that was selected for searching. to determine if previous_query can be reset to ""
         st.session_state.submitted = False
+
+    if not "picogroups" in st.session_state:
+            st.session_state.picogroups = []
+    if not "multiselect" in st.session_state:
+            st.session_state.multiselect = []
+    if not "searchdoc" in st.session_state:
+            st.session_state.searchdoc = []
+    if not "picooptions" in st.session_state:
+            st.session_state.picooptions = {}
+
     st.session_state.last_page=current_page
 
 def V_SPACE(lines):
