@@ -76,7 +76,7 @@ def tablemaker(df, this_key):
     # Add key.
     data = AgGrid(df,
                   gridOptions=gridOptions,
-                  enable_enterprise_modules=True,
+                  enable_enterprise_modules=False,
                   allow_unsafe_jscode=True,
                   update_mode=GridUpdateMode.SELECTION_CHANGED,
                   #columns_auto_size_mode=ColumnsAutoSizeMode.FIT_CONTENTS,
