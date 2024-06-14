@@ -34,7 +34,7 @@ Currently it is focusing solely on people with schizophrenia or related problems
 
 st.markdown('Explore the [Study](MK-2_Study_Search), [Table](MK-2_Table_Search), or the [Data](Raptor_Data_Search) search pages.')
 V_SPACE(1)
-"MK-2 was last updated on xx/xx/2024 using the following sources: XX, YY, ZZ"
+"MK-2 was last updated in October 2023. It currently includes 20,072 studies with a total of 29,662 studified reports. The intervention arms of each study are manually curated and labelled with one of the 2,985 terms from the MK-2 intervention terminology."
 
 st.markdown("## What it is ")
 

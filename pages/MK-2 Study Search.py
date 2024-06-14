@@ -192,16 +192,19 @@ if st.sidebar.button('Export', key='export', type='primary'):
         reportdf = get_reports(thisdf)
         output_ris = to_ris(reportdf)
 
+
         tmp_name=os.path.join(tmppath,time_name)
-        print("----------------------{}".format(tmp_name))
+
         try:
             os.mkdir(tmp_name)
+
         except:
-            print(tmp_name, ' exists')
+            print(tmp_name, ' exists or error in creating it')
         with open(os.path.join(tmp_name, "all.ris"), "w", encoding='utf-8') as f:
             f.write(output_ris)
         #output_csv.to_csv(os.path.join(tmp_name, "study_overview.csv"), index=False)
         thisdf.to_csv(os.path.join(tmp_name, "study_overview.csv"), index=False)
+
 
         ids=reportdf['CRGStudyID'].unique()
         for i in ids:
@@ -215,7 +218,9 @@ if st.sidebar.button('Export', key='export', type='primary'):
             with open(os.path.join(subfolder, "study_{}_references.ris".format(i)), "w", encoding='utf-8') as f:
                 f.write(tmp_ris)
 
+
         zipped="{}.zip".format(tmp_name)
+
         # with zipfile.ZipFile(zipped, 'w') as f:
         #     for file in glob.glob('{}/*'.format(tmp_name)):
         #         f.write(file)
@@ -224,6 +229,7 @@ if st.sidebar.button('Export', key='export', type='primary'):
 
 
         zip(tmp_name, zipped)
+
 
         with open(zipped, "rb") as fp:
             btn = st.sidebar.download_button(
@@ -236,6 +242,8 @@ if st.sidebar.button('Export', key='export', type='primary'):
 
 
         shutil.rmtree(tmppath)
+        if not os.path.exists(tmppath):
+            os.mkdir(tmppath)
 
     if st.session_state.chosen != 'combo':
         st.sidebar.download_button("Press to Download",

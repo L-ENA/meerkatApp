@@ -116,8 +116,13 @@ def adding(lines,key, value):
     return lines
 
 def add_record(lines, i, row):
+    ptypes={"1":"Journal article", "2":"Book", "3":"Section of book", "4":"Conference proceedings", "5":"Correspondence", "6":"Computer program", "7":"Unpublished data", "8":"Other", "9": "Cochrane review" }
+    pt=str(row["PublicationTypeID"]).strip()
+    pt=ptypes.get(pt, "")
+
     lines.append('TY  - JOUR')
     lines = adding(lines, "T1", str(row["Title"]))
+    lines = adding(lines, "OP", str(row["OriginalTitle"]))
     lines = adding(lines, "N2", str(row["Abstract"]))
     for a in row["Authors"].split("//"):
         lines = adding(lines, "A1", str(a))
@@ -130,28 +135,32 @@ def add_record(lines, i, row):
         lines = adding(lines, "PY", str(int(row["Year"])))  # or else we will get a float, ie. year 2022.0
     except:
         lines = adding(lines, "PY", str(row["Year"]))
-
+    lines = adding(lines, "LA", str(row["Language"]))
     lines = adding(lines, "AD", str(row["User defined 3"]))
     lines = adding(lines, "SN", str(row["User defined 4"]))
     lines = adding(lines, "DO", str(row["User defined 2"]))
+
+    lines = adding(lines, "KW", str(row["Language"]))
+    lines = adding(lines, "KW", pt)
+    lines = adding(lines, "KW", str(row["Language"]))
     # lines = adding(lines, "ET", str(row["Edition"]))
 
-    rep_num = str(row["ReportNumber"])
+    rep_num = str(row["CRGReportID"])
     if rep_num == "0":
         lines = adding(lines, "ID", "unk_{}".format(i))
-        notes = "This is a single record for which we weren't able to retrieve data or match a study record."
+        notes = "This is a single record of the type <{}> for which we weren't able to retrieve data or match a study record.".format(pt)
 
 
     else:
         lines = adding(lines, "ID", rep_num)
-        notes = "This is a single record. Use the Study search tab on the MK-2 website to retrieve all assonciated reports. On study search, keep the automatically selected 'Reports' setting and use this query: ReportNumber:{}".format(
-            str(row["ReportNumber"]))
+        notes = "This is a single record of the type <{}>. Use the Study search tab on the MK-2 website to retrieve all assonciated reports. On study search, keep the automatically selected 'Reports' setting and use this query: CRGReportID:{}".format(
+            pt,str(row["CRGReportID"]))
 
     #####################add a notes field
 
     study = row.get("CRGStudyID", False)
     if study:
-        notes = "This record belongs to study <{}>.".format(study)
+        notes = "This record of type <{}> belongs to study <{}>.".format(pt,study)
 
     lines.append("N1  - {}".format(notes))
     lines.append('ER  - ')
@@ -163,8 +172,8 @@ def to_ris(df, ignore_0=True):
     for i,row in df.iterrows():
 
         if ignore_0:
-            if str(row["ReportNumber"])=="0":
-                print(str(row["ReportNumber"]))
+            if str(row["CRGReportID"])=="0":
+                print(str(row["CRGReportID"]))
                 pass
             else: lines=add_record(lines, i, row)
         else:
@@ -287,7 +296,7 @@ def get_study_data(q, ind):
     if json_data.shape[0]>0:
 
         if ind == 'tblreport':
-            res = requests.post('http://localhost:9090/api/studyfromanyid', json={"table": "report", "input": list(json_data['ReportNumber'])})
+            res = requests.post('http://localhost:9090/api/studyfromanyid', json={"table": "report", "input": list(json_data['CRGReportID'])})
 
         elif ind == 'tblstudy':
             res = requests.post('http://localhost:9090/api/studyfromanyid', json={"table": "study", "input": list(json_data['CRGStudyID'])})

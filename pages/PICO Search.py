@@ -179,11 +179,11 @@ if st.session_state.submitted:
         else:
             st.session_state.reload = True
             print("reload is true")
-        print("----debug stuff-----")
-        print(option)
-        print(st.session_state.reload)
-        print(st.session_state["query_{}".format(opp)])
-        print(st.session_state.previous_query)
+        # print("----debug stuff-----")
+        # print(option)
+        # print(st.session_state.reload)
+        # print(st.session_state["query_{}".format(opp)])
+        # print(st.session_state.previous_query)
         tablemaker(st.session_state.query_df, opp)
         st.session_state.previous_query = st.session_state["query_{}".format(opp)]
         # data_df["Select"] = [False for i in data_df.index]
@@ -208,36 +208,39 @@ if st.sidebar.button('Export', key='export', type='primary'):
     print("--------------------debug export-------------")
     if st.session_state.chosen == "CSV":
         output = convert_df(thisdf)
-        print(f'Time to convert: {time.time() - start}')
+        #print(f'Time to convert: {time.time() - start}')
 
 
     elif st.session_state.chosen == "RIS":
         reportdf=get_reports(thisdf)
         output=to_ris(reportdf)
-        print(f'Time to convert: {time.time() - start}')
+        #print(f'Time to convert: {time.time() - start}')
 
 
     else:
-        output_csv = convert_df(thisdf)#csv study file
+        output_csv = convert_df(thisdf)  # csv study file
         reportdf = get_reports(thisdf)
         output_ris = to_ris(reportdf)
 
-        tmp_name=os.path.join(tmppath,time_name)
-        print("----------------------{}".format(tmp_name))
+
+        tmp_name = os.path.join(tmppath, time_name)
         try:
             os.mkdir(tmp_name)
+            # print(os.path.exists(tmp_name))
+
         except:
-            print(tmp_name, ' exists')
+            print(tmp_name, ' exists or error in creating it')
         with open(os.path.join(tmp_name, "all.ris"), "w", encoding='utf-8') as f:
             f.write(output_ris)
-        #output_csv.to_csv(os.path.join(tmp_name, "study_overview.csv"), index=False)
+        # output_csv.to_csv(os.path.join(tmp_name, "study_overview.csv"), index=False)
         thisdf.to_csv(os.path.join(tmp_name, "study_overview.csv"), index=False)
 
-        ids=reportdf['CRGStudyID'].unique()
+
+        ids = reportdf['CRGStudyID'].unique()
         for i in ids:
-            tmpdf=reportdf[reportdf['CRGStudyID']==i]
+            tmpdf = reportdf[reportdf['CRGStudyID'] == i]
             tmp_ris = to_ris(tmpdf)
-            subfolder=os.path.join(tmp_name,str(i))
+            subfolder = os.path.join(tmp_name, str(i))
             try:
                 os.mkdir(subfolder)
             except:
@@ -245,9 +248,15 @@ if st.sidebar.button('Export', key='export', type='primary'):
             with open(os.path.join(subfolder, "study_{}_references.ris".format(i)), "w", encoding='utf-8') as f:
                 f.write(tmp_ris)
 
-        zipped="{}.zip".format(tmp_name)
+
+        zipped = "{}.zip".format(tmp_name)
+
+        # with zipfile.ZipFile(zipped, 'w') as f:
+        #     for file in glob.glob('{}/*'.format(tmp_name)):
+        #         f.write(file)
 
         zip(tmp_name, zipped)
+
 
         with open(zipped, "rb") as fp:
             btn = st.sidebar.download_button(
@@ -258,6 +267,52 @@ if st.sidebar.button('Export', key='export', type='primary'):
             )
 
         shutil.rmtree(tmppath)
+        if not os.path.exists(tmppath):
+            os.mkdir(tmppath)
+        # output_csv = convert_df(thisdf)#csv study file
+        # reportdf = get_reports(thisdf)
+        # output_ris = to_ris(reportdf)
+        # print(output_ris)
+        # print(" 6 Made files: {} {}".format(len(reportdf.index), len(output_ris)))
+        #
+        #
+        # tmp_name=os.path.join(tmppath,time_name)
+        # print("----------------------{}".format(tmp_name))
+        # try:
+        #     os.mkdir(tmp_name)
+        #     print(os.path.exists(tmp_name))
+        # except:
+        #     print(tmp_name, ' exists')
+        # with open(os.path.join(tmp_name, "all.ris"), "w", encoding='utf-8') as f:
+        #     f.write(output_ris)
+        # #output_csv.to_csv(os.path.join(tmp_name, "study_overview.csv"), index=False)
+        # thisdf.to_csv(os.path.join(tmp_name, "study_overview.csv"), index=False)
+        #
+        # ids=reportdf['CRGStudyID'].unique()
+        # for i in ids:
+        #     tmpdf=reportdf[reportdf['CRGStudyID']==i]
+        #     tmp_ris = to_ris(tmpdf)
+        #     subfolder=os.path.join(tmp_name,str(i))
+        #     try:
+        #         os.mkdir(subfolder)
+        #     except:
+        #         print(subfolder, " already existed")
+        #     with open(os.path.join(subfolder, "study_{}_references.ris".format(i)), "w", encoding='utf-8') as f:
+        #         f.write(tmp_ris)
+        #
+        # zipped="{}.zip".format(tmp_name)
+        #
+        # zip(tmp_name, zipped)
+        #
+        # with open(zipped, "rb") as fp:
+        #     btn = st.sidebar.download_button(
+        #         label="Download ZIP",
+        #         data=fp,
+        #         file_name="{}_{}.zip".format(option, len(st.session_state.exportindices)),
+        #         mime="application/zip"
+        #     )
+        #
+        # shutil.rmtree(tmppath)
 
     if st.session_state.chosen != 'combo':
         st.sidebar.download_button("Press to Download",
